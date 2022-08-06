@@ -1,0 +1,39 @@
+<html lang="en">
+<body>
+  <div>
+    <form action="/task/new" method="POST">
+      <p>
+        <label for="taname">工作人員:</label>
+        <input type="text" id="taname" name="taname" placeholder="Your name" required>
+      </p>
+      
+      <p>
+        <label for="tatype">工作類型:</label>
+        <input type="text" id="tatype" name="tatype" placeholder="Your task type" required>
+      </p>      
+
+      <p>
+        <label for="tadate">工作日期:</label>
+        <input type="text" id="tadate" name="tadate" placeholder="Your task date" required>
+      </p>
+      
+      <p>
+        <label for="taappnum">申請表編號:</label>
+        <input type="text" id="taappnum" name="taappnum">
+      </p>
+
+      <p>
+        <label for="tafamrep">家團代表:</label>
+        <input type="text" id="tafamrep" name="tafamrep">
+      </p>
+      
+      <p>
+        <label for="taremark">工作備註:</label>
+        <textarea id="taremark" name="taremark"></textarea>
+      </p>
+
+      <button>Create</button>
+    </form>
+  </div>
+</body>
+</html>

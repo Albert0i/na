@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All tasks</title>
+</head>
+<body>
+    <h3>Create New Task</h3>    
+    <form action="/task/new" method="post">
+        <input type="hidden" name="taname" value="<%= locals.taname %>">
+        <table>
+            <tr>
+                <td><label for="tatype">type: </label></td>
+                <td><input type="text" name="tatype" value="<%= locals.tatype %>" required></td>
+            </tr>
+            <tr>
+                <td><label for="tadate">date: </label></td>
+                <td><input type="text" name="tadate" value="<%= locals.tadate %>" required></td>
+            </tr>
+            <tr>
+                <td><label for="taappnum">appnum: </label></td>
+                <td><input type="text" name="taappnum"></td>
+            </tr>
+            <tr>
+                <td><label for="tafamrep">famrep: </label></td>
+                <td><input type="text" name="tafamrep"></td>
+            </tr>
+            <tr>
+                <td><label for="taremark">remark: </label></td>
+                <td><input type="text" name="taremark"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button>Create</button>
+                </td>
+            </tr>
+        </table>        
+    </form>
+    <hr>
+
+    <h3>All Tasks</h3>
+    <% if (locals.tasks.length > 0 ) { %> 
+        <% locals.tasks.forEach( t => console.log(t)) %> 
+        <table>
+            <thead>
+                <th>
+                    <td>type</td>
+                    <td>date</td>
+                    <td>appnum</td>
+                    <td>famrep</td>
+                    <td>remark</td>
+                    <td></td>
+                    <td></td>
+                </th>
+            </thead>
+    
+            <tdody>
+                <tr>
+                    <td>工作一</td>
+                    <td>2022/08/05</td>
+                    <td>R123456</td>
+                    <td>陳大文</td>
+                    <td>備註</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                </tr>    
+            </tdody>
+        </table>
+    <% } else { %> 
+        <p>Task not found</p>
+    <% } %>     
+</body>
+</html>
