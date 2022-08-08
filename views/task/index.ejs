@@ -4,43 +4,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All tasks</title>
+    <style>
+        a { text-decoration: none; }
+    </style>
 </head>
 <body>
-    <h3>Create New Task</h3>
-    <form action="/task/new" method="post">
+    <% if (locals.id) { %>
+        <h3>Edit Task</h3>
+    <% } else { %>
+        <h3>Create New Task</h3>
+    <% } %>
+    
+    <form action="/task/<% if (locals.id) { %>update<% } else { %>new<% } %>" method="post">
         <input type="hidden" name="id" value="<%= locals.id %>">
         <input type="hidden" name="taname" value="<%= locals.taname %>">
         <table>
             <tr>
                 <td><label for="tatype">type: </label></td>
-                <td><input type="text" name="tatype" value="<%= locals.tatype %>" required></td>
+                <td><input type="text" name="tatype" placeholder="input type" 
+                    value="<%= locals.tatype %>" required></td>
             </tr>
             <tr>
                 <td><label for="tadate">date: </label></td>
-                <td><input type="text" name="tadate" value="<%= locals.tadate %>" required></td>
+                <td><input type="text" name="tadate" placeholder="input date" 
+                    value="<%= locals.tadate %>" maxlength="8" required></td>
             </tr>
             <tr>
                 <td><label for="taappnum">appnum: </label></td>
-                <td><input type="text" name="taappnum"></td>
+                <td><input type="text" name="taappnum" placeholder="input appnum" 
+                    value="<%= locals.taappnum %>"></td>
             </tr>
             <tr>
                 <td><label for="tafamrep">famrep: </label></td>
-                <td><input type="text" name="tafamrep"></td>
+                <td><input type="text" name="tafamrep" placeholder="input famrep" 
+                    value="<%= locals.tafamrep %>"></td>
             </tr>
             <tr>
                 <td><label for="taremark">remark: </label></td>
-                <td><input type="text" name="taremark"></td>
+                <td><input type="text" name="taremark" placeholder="input remark" 
+                    value="<%= locals.taremark %>"></td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <button>Create</button>
+                    <button><% if (locals.id) { %>Update<% } else { %>Create<% } %></button>
+                    <input type="reset">
                 </td>
             </tr>
         </table>        
     </form>
     <hr>
 
-    <h3>All Tasks</h3>
+    <h3><a href="/task">All Tasks</a></h3>
     <% if (locals.tasks.length > 0 ) { %>  
         <table border="1">
             <thead>

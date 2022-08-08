@@ -7,7 +7,9 @@
  const TaskSchema = new Schema({     
      taname: {
          type: String,
-         required: true
+         required: true, 
+         index: true, 
+         lowercase: true
      },
      tatype: {
          type: String,
@@ -20,7 +22,10 @@
      taappnum: String,
      tafamrep: String,
      taremark: String
- });
+    },
+    { 
+        timestamps: true
+    });
  
  module.exports = mongoose.model('Task', TaskSchema);
 

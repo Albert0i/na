@@ -10,7 +10,6 @@ const user_process_login = (req, res) => {
         ((req.body.username==='noname') && (req.body.password==='789')) )
     {
         req.session.username=req.body.username
-        req.session.abc='hahaha...'
         res.redirect('/task')
     }
     else
