@@ -11,7 +11,8 @@
      },
      tunamep: {
          type: String,
-         required: true
+         required: true,
+         lowercase: true
      },
      tupwdhash: String, 
      tulevel: { type: Number, 
