@@ -6,7 +6,7 @@
     <title>All tasks</title>
 </head>
 <body>
-    <h3>Create New Task</h3>    
+    <h3>Create New Task</h3>
     <form action="/task/new" method="post">
         <input type="hidden" name="taname" value="<%= locals.taname %>">
         <table>
@@ -40,8 +40,7 @@
     <hr>
 
     <h3>All Tasks</h3>
-    <% if (locals.tasks.length > 0 ) { %> 
-        <% locals.tasks.forEach( t => console.log(t)) %> 
+    <% if (locals.tasks.length > 0 ) { %>  
         <table>
             <thead>
                 <th>
@@ -56,7 +55,17 @@
             </thead>
     
             <tdody>
-                <tr>
+                <% locals.tasks.forEach( t => { %>
+                    <tr>
+                        <td><%= t.tatype %></td>
+                        <td><%= t.tadate %></td>
+                        <td><%= t.taappnum %></td>
+                        <td><%= t.tafamrep %></td>
+                        <td><%= t.taremark %></td>
+                    </tr>
+                <% }) %>
+
+                <!-- <tr>
                     <td>工作一</td>
                     <td>2022/08/05</td>
                     <td>R123456</td>
@@ -64,7 +73,7 @@
                     <td>備註</td>
                     <td><button>Edit</button></td>
                     <td><button>Delete</button></td>
-                </tr>    
+                </tr>     -->
             </tdody>
         </table>
     <% } else { %> 
