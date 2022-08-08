@@ -9,13 +9,13 @@ router.post('/new', (req, res) => task_create(req, res))
 
 router.delete('/delete/:id', (req, res) => task_delete(req, res))
 
-router.put('/put/:id', (req, res) => task_update(req, res))
+router.put('/update/:id', (req, res) => task_update(req, res))
 
-router.get('/:id', (req, res) => {
-    console.log(req.params.id)
-    //console.log(req.userid)
-    res.status(200).send(`A single task (${req.params.id})`)
-})
+// router.get('/:id', (req, res) => {
+//     console.log(req.params.id)
+//     //console.log(req.userid)
+//     res.status(200).send(`A single task (${req.params.id})`)
+// })
 
 router.param('id', (req, res, next, id) => {
     //req.userid = `user${id}`

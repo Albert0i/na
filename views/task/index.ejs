@@ -61,11 +61,10 @@
                         <td><%= t.taappnum %></td>
                         <td><%= t.tafamrep %></td>
                         <td><%= t.taremark %></td>
-                        <td>
-                            <a href="/task?id=<%= t._id %>">Edit</a>
+                        <td>                            
                             <form action="/task?id=<%= t._id %>" method="GET">
                                 <input type="hidden" name="id" value="<%= t._id %>">
-                                <button type="submit" >Edit</button>
+                                <button type="submit">Edit</button>
                             </form>
                         </td>
                         <td>
