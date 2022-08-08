@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+var methodOverride = require('method-override')
 const session = require("express-session");
 const Redis = require("ioredis");
 const mongoose = require("mongoose");
@@ -9,6 +10,9 @@ const app = express()
 const port = process.env.PORT || 3000
 const taskRoute = require('./routes/taskRoute')
 const userRoute = require('./routes/userRoute')
+
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
 
 app.use(express.static('public'))
 app.use(express.urlencoded( {extended: true}))

@@ -41,39 +41,33 @@
 
     <h3>All Tasks</h3>
     <% if (locals.tasks.length > 0 ) { %>  
-        <table>
+        <table border="1">
             <thead>
-                <th>
-                    <td>type</td>
-                    <td>date</td>
-                    <td>appnum</td>
-                    <td>famrep</td>
-                    <td>remark</td>
-                    <td></td>
-                    <td></td>
-                </th>
+                <tr>
+                    <th>type</th>
+                    <th>date</th>
+                    <th>appnumr</th>
+                    <th>famrepr</th>
+                    <th>remark</th>
+                    <th></th>
+                    <th></th>
+                </tr>
             </thead>
-    
-            <tdody>
-                <% locals.tasks.forEach( t => { %>
+            <tdody><% locals.tasks.forEach( t => { %>
                     <tr>
                         <td><%= t.tatype %></td>
                         <td><%= t.tadate %></td>
                         <td><%= t.taappnum %></td>
                         <td><%= t.tafamrep %></td>
                         <td><%= t.taremark %></td>
+                        <td><button>Edit</button></td>
+                        <td>
+                            <form method="POST" action="/task/delete/<%= t._id %>?_method=DELETE">
+                                <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
-
-                <!-- <tr>
-                    <td>工作一</td>
-                    <td>2022/08/05</td>
-                    <td>R123456</td>
-                    <td>陳大文</td>
-                    <td>備註</td>
-                    <td><button>Edit</button></td>
-                    <td><button>Delete</button></td>
-                </tr>     -->
             </tdody>
         </table>
     <% } else { %> 
