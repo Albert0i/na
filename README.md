@@ -1,7 +1,7 @@
 # na
 Nodetify TA project
 
-1. .env
+1. .env file
 ```
 # Server port 
 PORT = 3000
@@ -12,7 +12,6 @@ MONGODB_URI = "mongodb+srv://your_mongodb_server_url"
 # Redis
 REDIS_URI = "redis://your_redis_server_url"
 ```
-
 2. npm install 
 
 3. npm run dev
