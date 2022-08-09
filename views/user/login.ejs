@@ -3,29 +3,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>登入</title>
 </head>
 <body>
-    <h3>Login</h3>
+    <h3>登入</h3>
     <form action="/user/login" method="post">
-        <p>
-            <label for="username"><b>Username</b></label>
-            <input type="text" name="username" value="<%= locals.username %>" placeholder="Enter Username" required>
-        </p>
-
-        <p>
-            <label for="passwor"><b>Password</b></label>
-            <input type="password" name="password" value="<%= locals.password %>" placeholder="Enter Password" required>
-          </div>
-        </p>
-
-        <p>
-            <button type="submit">Login</button>
-        </p>
-
-        <p>
-            <%= locals.message %>
-        </p>
+        <table>
+            <tr>
+                <th><label for="username">用戶名稱: </label></th>
+                <td><input type="text" name="username" id="username" value="<%= locals.username %>" placeholder="輸入用戶名稱" required></td>
+            </tr>
+            <tr>
+                <th><label for="password">用戶密碼: </label></th>
+                <td><input type="password" name="password" value="<%= locals.password %>" placeholder="輸入用戶密碼" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Go</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <%= locals.message %>
+                </td>
+            </tr>
+        </table>
     </form>
+    <script>
+        document.getElementById("username").focus();
+    </script>
 </body>
 </html>

@@ -1,7 +1,5 @@
 const user_login = (req, res) => {
-    res.render('user/login', { username: 'alberto', 
-                               password: '123', 
-                               message: 'Please input username and password'})
+    res.render('user/login')
 }
 
 const user_process_login = (req, res) => {
