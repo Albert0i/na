@@ -3,29 +3,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>登記</title>
 </head>
 <body>
-    <h3>Sign Up</h3>
+    <h3>登記</h3>
     <form action="/user/signup" method="post">
-        <p>
-            <label for="username"><b>Username</b></label>
-            <input type="text" name="username" value="<%= locals.username %>" placeholder="Enter Username" required>
-        </p>
+        <table>
+            <tr>
+                <th><label for="username">用戶名稱: </label></th>
+                <td><input type="text" name="username" id="username" value="<%= locals.username %>" placeholder="輸入用戶名稱" required></td>
+            </tr>
+            <tr>
+                <th><label for="password">用戶密碼: </label></th>
+                <td><input type="password" name="password" value="<%= locals.password %>" placeholder="輸入用戶密碼" required></td>
+            </tr>
+            <tr>
+                <th><label for="password2">確認密碼: </label></th>
+                <td><input type="password" name="password2" value="<%= locals.password %>" placeholder="輸入確認密碼" required></td>
+            </tr>
 
-        <p>
-            <label for="passwor"><b>Password</b></label>
-            <input type="password" name="password" value="<%= locals.password %>" placeholder="Enter Password" required>
-          </div>
-        </p>
-
-        <p>
-            <button type="submit">Sign Up</button>
-        </p>
-
-        <p>
-            <%= locals.message %>
-        </p>
+            <tr>
+                <th><label for="tunamec">中文姓名: </label></th>
+                <td><input type="text" name="tunamec" value="<%= locals.tunamec %>" placeholder="輸入中文名稱"></td>
+            </tr>
+            <tr>
+                <th><label for="tunamep">葡文姓名: </label></th>
+                <td><input type="text" name="tunamep" value="<%= locals.tunamep %>" placeholder="輸入葡文名稱"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Go</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <%= locals.message %>
+                </td>
+            </tr>
+        </table>
     </form>
+    <script>
+        document.getElementById("username").focus();
+    </script>
 </body>
 </html>

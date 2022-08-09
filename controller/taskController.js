@@ -1,5 +1,5 @@
-const { format } = require('date-fns'); 
 const Task = require('../model/Task');
+const { format } = require('date-fns'); 
 
 const task_index = (req, res) => {
     Task.find({ taname: req.session.username })
