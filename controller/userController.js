@@ -37,24 +37,27 @@ const user_process_login = async (req, res) => {
         res.render('user/login', { username, 
                                    password, 
                                    message: 'Invalid username'})
-      }  
-      
-      const isCorrect = await bcrypt.compare(password, user.password);
-  
-      if (isCorrect) {
-            req.session.username=username
-            res.redirect('/task')
-      } else {
-            req.session.username=undefined
-            res.render('user/login', { username, 
-                                    password, 
-                                    message: 'Invalid password'})
       }
+      else 
+      {
+        const isCorrect = await bcrypt.compare(password, user.password);
+  
+        if (isCorrect) {
+              req.session.username=username
+              res.redirect('/task')
+        } else {
+              req.session.username=undefined
+              res.render('user/login', { username, 
+                                         password, 
+                                         message: 'Invalid password'})
+        }
+      }      
     } catch (e) {
-        req.session.username=undefined
+        console.log(e)
+        req.session.username=undefined        
         res.render('user/login', { username, 
-                                password, 
-                                message: e })
+                                   password, 
+                                   message: e })
 
     }
 }
