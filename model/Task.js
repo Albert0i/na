@@ -17,7 +17,7 @@
      },
      tadate: {
          type: Number,
-         requited: true
+         required: true
      },
      taappnum: String,
      tafamrep: String,
@@ -40,4 +40,8 @@
 	 "TAFAMREP" VARCHAR2(80 CHAR),
 	 "TAREMARK" VARCHAR2(80 CHAR)
 	); 
+*/
+/*
+    Mongoose Guides | Validation
+    https://mongoosejs.com/docs/validation.html
 */
