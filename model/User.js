@@ -45,6 +45,6 @@ module.exports = mongoose.model('User', UserSchema);
     );
 */
 /*
-    Mongoose Guides
-    https://mongoosejs.com/docs/guides.html
+    Mongoose Guides | Validation
+    https://mongoosejs.com/docs/validation.html
 */
