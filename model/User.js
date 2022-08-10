@@ -7,18 +7,19 @@
  const UserSchema = new Schema({     
         username: {
             type: String,
-            require: [true, "User must have a username"],
-            min: [6, 'Must be at least 6 of length, got {VALUE}'],
+            required: [true, "User must have a username"],
+            minLength: [6, 'Must be at least 6 of length, got {VALUE}'],
             lowercase: true, 
             trim: true, 
-            unique: [true, "User must be unique"] ,
+            unique: [true, "User must be unique"],
+            immutable: true
         },
         password: { 
             type: String, 
-            require: true
+            required: true
         },
 
-        tunamec: String,
+        tunamec: String, 
         tunamep: String,
         tulevel: { 
             type: String, 
