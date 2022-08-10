@@ -73,13 +73,3 @@ module.exports = {
     task_delete,
     task_update
   }
-
-//console.log(`id=${req.params.id}`)
-// Task.deleteOne({ _id: req.params.id } )
-// .then((data) => { 
-//     console.log(data) 
-//     res.redirect('/task')
-// } )
-// .catch((err) => { 
-//     console.log(err)
-// } )

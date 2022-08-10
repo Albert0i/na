@@ -2,45 +2,55 @@ const User = require("../model/User");
 const bcrypt = require("bcryptjs");
 
 const user_signup = (req, res) => {
-    res.render('user/signup', {})
+    res.render('user/signup')
 }
 
-const user_process_signup = async (req, res) => {
+const user_process_signup = (req, res) => {
     const { username, password, password2, tunamec, tunamep } = req.body;
 
-    try {
-            const hashpassword = await bcrypt.hash(password, 12);
-            const newUser = await User.create({
-                username,
-                password: hashpassword,
+    if (password === password2) 
+    {
+        const hashpassword = bcrypt.hashSync(password, 12);
+        User.create({
+            username,
+            password: hashpassword,
+            tunamec, 
+            tunamep
+        })
+        .then(data => {
+            console.log(data)
+            res.redirect('/user/login')    
+        })
+        .catch(err => {
+            console.log(err)
+            res.render('user/signup', { username, 
+                password, 
+                password2, 
                 tunamec, 
-                tunamep
-            });
-            console.log(newUser)
-            res.redirect('/user/login')
-        } catch (e) {
-            console.log(e)
-        }
+                tunamep, 
+                message: err.message})
+        })
+    }        
+    else
+    {
+        res.render('user/signup', { username, 
+                                    password, 
+                                    password2, 
+                                    tunamec, 
+                                    tunamep, 
+                                    message: 'Passwords not match'})
+    }
 }
 
 const user_login = (req, res) => {
     res.render('user/login')
 }
 
-const user_process_login = async (req, res) => {
+const user_process_login =(req, res) => {
     const { username, password } = req.body;
-    try {
-      const user = await User.findOne({ username });
-  
-      if (!user) {
-        req.session.username=undefined
-        res.render('user/login', { username, 
-                                   password, 
-                                   message: 'Invalid username'})
-      }
-      else 
-      {
-        const isCorrect = await bcrypt.compare(password, user.password);
+      User.findOne({ username })
+      .then (data => {
+        const isCorrect = bcrypt.compareSync(password, data.password);
   
         if (isCorrect) {
               req.session.username=username
@@ -51,15 +61,13 @@ const user_process_login = async (req, res) => {
                                          password, 
                                          message: 'Invalid password'})
         }
-      }      
-    } catch (e) {
-        console.log(e)
-        req.session.username=undefined        
+      })
+      .catch(err => {
+        req.session.username=undefined
         res.render('user/login', { username, 
                                    password, 
-                                   message: e })
-
-    }
+                                   message: 'Invalid username'})
+      });
 }
 
 const user_logout = (req, res) => {
@@ -74,18 +82,3 @@ module.exports = {
     user_process_login,     
     user_logout 
   }
-
-    // if (((req.body.username==='alberto') && (req.body.password==='123')) || 
-    //     ((req.body.username==='bonnie') && (req.body.password==='456')) || 
-    //     ((req.body.username==='noname') && (req.body.password==='789')) )
-    // {
-    //     req.session.username=req.body.username
-    //     res.redirect('/task')
-    // }
-    // else
-    // {
-    //     req.session.username=undefined
-    //     res.render('user/login', { username: req.body.username, 
-    //                                password: req.body.password, 
-    //                                message: 'Invalid username and/or password'})
-    // }

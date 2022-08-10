@@ -11,7 +11,7 @@
             min: [6, 'Must be at least 6 of length, got {VALUE}'],
             lowercase: true, 
             trim: true, 
-            unique: true,
+            unique: [true, "User must be unique"] ,
         },
         password: { 
             type: String, 
@@ -23,7 +23,7 @@
         tulevel: { 
             type: String, 
             enum: ['Disabled', 'Enabled', 'User', 'Assistant', 'Admin'],
-            default: 'Enabled'
+            default: 'User'
         }, 
     },
     { 
