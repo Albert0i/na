@@ -11,8 +11,9 @@
     <table>
         <tr>
             <td><label for="tatype">工作類型</label></td>
-            <td><input type="text" name="tatype" placeholder="input type" 
-                value="<%= locals.tatype %>" required></td>
+            <!-- <td><input type="text" name="tatype" placeholder="input type" 
+                value="<%= locals.tatype %>" required></td> -->
+            <td><%- include('options.ejs'); %></td>
         </tr>
         <tr>
             <td><label for="tadate">工作日期</label></td>

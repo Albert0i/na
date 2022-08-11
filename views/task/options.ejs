@@ -1,0 +1,5 @@
+<select name="tatype">
+    <% locals.options.forEach (e => { %>
+        <option value="<%= e.totype %>" <% if (e.totype == locals.tatype ) { %>selected<% }%>><%= e.totype %></option>    
+    <% }) %>
+  </select>

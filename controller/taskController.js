@@ -1,7 +1,10 @@
 const Task = require('../model/Task');
+const Option = require('../model/Option');
 const { format } = require('date-fns'); 
 
-const task_index = (req, res) => {
+const task_index = async (req, res) => {
+    let options = await Option.find().sort({'tord': 1})
+    
     Task.find({ taname: req.session.username })
         .then(data => {
             let t = {
@@ -10,7 +13,7 @@ const task_index = (req, res) => {
                     taappnum: '',
                     tafamrep: '',
                     taremark: '',
-                }
+                }                            
             if (req.query.id)
             {
                 t = data.find(e => e._id == req.query.id)
@@ -26,7 +29,9 @@ const task_index = (req, res) => {
                 tafamrep: t.tafamrep,
                 taremark: t.taremark,
 
-                tasks: data } )
+                tasks: data,
+                options
+             } )
         })
         .catch(err => {
             console(err)
