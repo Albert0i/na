@@ -74,5 +74,5 @@ app.use('/', apiLimiter)
 app.listen(process.env.PORT, () => {
     console.log(`Application started on port ${port}`)
     if (process.env.PUBLIC_IP)
-      console.log(`http://${process.env.PUBLIC_IP}/task`)
+      console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)
 })
