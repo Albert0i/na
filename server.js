@@ -79,6 +79,8 @@ app.listen(process.env.PORT, () => {
 /*
   pm2 
   https://pm2.keymetrics.io/
-  
+
   pm2 start server.js --name na --watch
+
+  pm2 start ecosystem.config.js
 */
