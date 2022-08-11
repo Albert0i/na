@@ -1,3 +1,7 @@
+<!-- 
+    HTML <select> Tag
+    https://www.w3schools.com/tags/tag_select.asp
+-->
 <select name="tatype">
     <% locals.options.forEach (e => { %>
         <option value="<%= e.totype %>" <% if (e.totype == locals.tatype ) { %>selected<% }%>><%= e.totype %></option>    
