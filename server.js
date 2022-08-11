@@ -76,3 +76,9 @@ app.listen(process.env.PORT, () => {
     if (process.env.PUBLIC_IP)
       console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)
 })
+/*
+  pm2 
+  https://pm2.keymetrics.io/
+  
+  pm2 start server.js --name na --watch
+*/
