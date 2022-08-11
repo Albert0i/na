@@ -17,7 +17,7 @@ const task_index = async (req, res) => {
             if (req.query.id)
             {
                 t = data.find(e => e._id == req.query.id)
-                console.log(t)
+                //console.log(t)
             }
 
             res.render('task/index', {
@@ -34,14 +34,14 @@ const task_index = async (req, res) => {
              } )
         })
         .catch(err => {
-            console(err)
+            console.log(err)
         })
 }
 
 const task_create = (req, res) => {
     Task.create(req.body)
     .then((data) => { 
-        console.log(data) 
+        //console.log(data) 
         res.redirect('/task')
     } )
     .catch((err) => { 
@@ -49,11 +49,10 @@ const task_create = (req, res) => {
     } )
 }
 
-const task_delete = (req, res) => {
-    console.log(`id=${req.params.id}`)
+const task_delete = (req, res) => {    
     Task.deleteOne({ _id: req.params.id } )
     .then((data) => { 
-        console.log(data) 
+        //console.log(data) 
         res.redirect('/task')
     } )
     .catch((err) => { 
@@ -64,7 +63,7 @@ const task_delete = (req, res) => {
 const task_update = (req, res) => {
     Task.findByIdAndUpdate(req.body.id, req.body)
     .then((data) => { 
-        console.log(data) 
+        //console.log(data) 
         res.redirect('/task')
     } )
     .catch((err) => { 

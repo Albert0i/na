@@ -18,7 +18,7 @@ const user_process_signup = (req, res) => {
             tunamep
         })
         .then(data => {
-            console.log(data)
+            //console.log(data)
             res.redirect('/user/login')    
         })
         .catch(err => {
@@ -50,6 +50,7 @@ const user_process_login =(req, res) => {
     const { username, password } = req.body;
       User.findOne({ username })
       .then (data => {
+        //console.log(data)
         const isCorrect = bcrypt.compareSync(password, data.password);
   
         if (isCorrect) {
@@ -63,6 +64,7 @@ const user_process_login =(req, res) => {
         }
       })
       .catch(err => {
+        console.log(err)
         req.session.username=undefined
         res.render('user/login', { username, 
                                    password, 

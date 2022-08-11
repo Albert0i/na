@@ -11,7 +11,11 @@
         },
         totype: { 
             type: String, 
-            required: true
+            required: true,
+            trim: true, 
+            unique: [true, "totype must be unique"],
+            index: true, 
+            immutable: true
         }
     });
  
