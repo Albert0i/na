@@ -4,7 +4,10 @@ module.exports = {
       script: 'server.js',
       instances: 4,
       exec_mode: "cluster",
-      watch: '.'
+      watch: '.',
+      env_production: {
+        NODE_ENV: "production"
+      }
     }],
     deploy : {
       production : {
