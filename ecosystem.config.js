@@ -21,19 +21,7 @@ module.exports = {
       }
     }
   };
-/*
-  pm2 deploy production setup
-
-  pm2 deploy production
-
-  pm2 deploy production update 
-
-  pm2 deploy production list
-
-  pm2 deploy production --force
-
-  pm2 deploy production exec pm2 list
-  
+/*  
   Scaling Node.js Applications With PM2 Clusters
   https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66
 
@@ -42,4 +30,20 @@ module.exports = {
 
   EASY DEPLOY WITH SSH
   https://pm2.io/docs/runtime/guide/easy-deploy-with-ssh/
+
+  Setup
+    pm2 deploy production setup
+
+  Deploy  
+    pm2 deploy production
+  
+  Update 
+    pm2 deploy production update 
+    pm2 deploy production update --force
+
+  list previous deploy commits
+    pm2 deploy production list
+  
+  execute the given <cmd>  
+    pm2 deploy production exec pm2 list
 */    
