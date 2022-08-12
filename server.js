@@ -68,8 +68,9 @@ connectWithRetry();
 mongoose.connection.on("reconnected", () => console.log('Re-connected to MongoDB Server'));
 
 app.get('/', (req, res) => {
-
-  res.status(200).send(`Your pid is ${process.pid}`)
+  let msg = `Your pid is ${process.pid}`
+  console.log(msg)
+  res.status(200).send(msg)
 })
 
 app.use('/task', taskRoute)
