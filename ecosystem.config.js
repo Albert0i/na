@@ -22,7 +22,7 @@ module.exports = {
         'post-setup' : '', 
         'pre-deploy-local': '',
         'pre-deploy' : '', 
-        'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+        'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production '
       }
     }
   };

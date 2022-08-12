@@ -5,7 +5,7 @@ const session = require("express-session");
 const Redis = require("ioredis");
 const mongoose = require("mongoose");
 const { format } = require('date-fns'); 
-const rateLimit = require('express-rate-limit')
+//const rateLimit = require('express-rate-limit')
 const morgan = require('morgan')
 
 const app = express()
@@ -37,7 +37,10 @@ app.set('view engine', 'ejs')
 let sess = {
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true, 
+    cookie: { 
+      maxAge: 30 * 60 * 1000   // in milliseconds
+    }
 }
 // if Redis is defined, it should be Redis session
 if (process.env.REDIS_URI)
