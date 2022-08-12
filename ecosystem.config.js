@@ -22,4 +22,7 @@ module.exports = {
 /*
   Scaling Node.js Applications With PM2 Clusters
   https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66
+
+  LOAD-BALANCING | GUIDE | PM2 DOCUMENTATION
+  https://pm2.io/docs/runtime/guide/load-balancing/
 */    
