@@ -2,7 +2,7 @@ module.exports = {
     apps : [{
       name: "na",
       script: 'server.js',
-      instances: 0,
+      instances: 4,
       exec_mode: "cluster",
       watch: '.'
     }],
