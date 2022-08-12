@@ -26,8 +26,14 @@ module.exports = {
 
   pm2 deploy production
 
+  pm2 deploy production update 
+
+  pm2 deploy production list
+
   pm2 deploy production --force
 
+  pm2 deploy production exec pm2 list
+  
   Scaling Node.js Applications With PM2 Clusters
   https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66
 
