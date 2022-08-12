@@ -76,6 +76,11 @@ app.get('/', (req, res) => {
 app.use('/task', taskRoute)
 app.use('/user', userRoute)
 
+// 404 page
+app.use((req, res) => {
+  res.status(404).render('404');
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`Application started on port ${port}`)
     if (process.env.PUBLIC_IP)
