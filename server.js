@@ -68,7 +68,7 @@ connectWithRetry();
 mongoose.connection.on("reconnected", () => console.log('Re-connected to MongoDB Server'));
 
 app.get('/', (req, res) => {
-  let msg = `Your pid is ${process.pid}`
+  let msg = `Your pid is ${process.pid}, cluster instance is ${process.env.NODE_APP_INSTANCE}`
   console.log(msg)
   res.status(200).send(msg)
 })  
