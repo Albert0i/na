@@ -46,4 +46,7 @@ module.exports = {
   
   execute the given <cmd>  
     pm2 deploy production exec pm2 list
+
+  Help
+    pm2 deploy help
 */    
