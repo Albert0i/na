@@ -2,11 +2,12 @@
 Node-tify TA project 
 
 ## Forward
-I have a story, i.e. **TA**, but I won't tell you, not because it is voluminous, just because I don't want to... Being stagnated in a pond for over two decades, I became so accustomed to the posture and temper ot it. The way of gearing up things, the conception, the steps to execute I was so acquaintance. They just deeply implanted in my brain. 
+I have a story, i.e. **TA**, but I won't tell you, not because it is insignificant, just because I don't want to... Being stagnated in a pond for over two decades, I became so accustomed to the placid posture of it. The way of gearing things up, the steps to do it right I was so acquaintance. They just deeply implanted in my brain. 
 
-A few years ago, I came across other *way* when I was finding tools to *modernize* my artefacts. All my works proved to be in vain, changing the clothes of a dying man doesn't prevent him from cessation, only the effect of a new shroud on old carcase. At the first sight, I was startled and dropped to faint immediately at the velocity and delicacy. A few months ago after finishing **TA2**, I decided to abandon my old days and ways. 
+A few years ago, I came across other *way* when I was finding means to *modernize* my artefacts. All the works proved to be in vain, just like changing the clothes of a dying man doesn't prevent him from cessation, the only the effect was a new shroud to on old carcase. At the first sight, I was startled and dropped to faint immediately at the velocity and delicacy. After finishing **TA2**, I decided to abandon my old ways and old days. 
 
-## I. Introduction
+## I. Back to HTTP
+<a href="https://docs.microsoft.com/en-us/aspnet/web-forms/">ASP.NET Web Forms</a> employs a simplified model to facilitate creation of web pages. The discussion of pros and cons is voluminous. 
 
 ## II. Express and MVC 
 
@@ -20,7 +21,8 @@ A few years ago, I came across other *way* when I was finding tools to *moderniz
 ## VI. Reference
 1. <a href="https://blog.inedo.com/dotnet/net5-web-forms">Web Forms in the Age of .NET 5/6+: Planning for the Long Term</a>
 2. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>
-3. 
+3. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP response status codes</a>
+4. <a href="https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8">ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8</a>
 
 ## VII. Appendix
 
