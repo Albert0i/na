@@ -5,7 +5,7 @@ I have a story, i.e. **TA**, but I won't tell you, not because it is insignifica
 
 Two years ago, I came across the other *way* when I was finding means to *modernize* my artefacts. All my works proved to be in vain, as you may know, changing the clothes of a dying man doesn't prevent him from cessation, the only effect was to put a new shroud on old carcase... At the first sight of the *way*, I was startled and dropped to faint immediately at it's velocity and delicacy... With tremendous mental exertion, I managed to finish **TA2**.
 
-![TA2](img\ta2.JPG)
+![TA2](img/ta2.JPG)
 
 While sitting miserably doesn't change anything. I decided to renounce my old ways, my old days and search for new dream, new deed, of course, with new way. 
 
