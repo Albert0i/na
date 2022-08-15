@@ -4,7 +4,7 @@ Node-tify TA project
 ## Forward
 I have a story, i.e. **TA**, but I won't tell you, not because it is voluminous, just because I don't want to... Being stagnated in a pond for over two decades, I became so accustomed to the posture and temper ot it. The way of gearing up things, the conception, the steps to execute I was so acquaintance. They just deeply implanted in my brain. 
 
-A few years ago, I came across other way when I was finding tools to *modernize* my artefacts. All my works proved in vain, changing the clothes of a dying man doesn't prevent him from cessation, the effect of a new shroud on old carcase. At the first sight, I was startled and dropped to faint immediately at the velocity and delicacy. A few months ago after finishing **TA2**, I decided to abandon my old days and ways. 
+A few years ago, I came across other *way* when I was finding tools to *modernize* my artefacts. All my works proved to be in vain, changing the clothes of a dying man doesn't prevent him from cessation, only the effect of a new shroud on old carcase. At the first sight, I was startled and dropped to faint immediately at the velocity and delicacy. A few months ago after finishing **TA2**, I decided to abandon my old days and ways. 
 
 ## I. Introduction
 
