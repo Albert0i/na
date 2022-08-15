@@ -15,6 +15,8 @@ While sitting miserably doesn't change anything. I decided to renounce my old wa
 
 HTTP verbs such as PUT and DELETE are important when <a href="https://www.w3schools.com/js/js_ajax_intro.asp">AJAX</a> comes into play, RESTful URI are important when implementing API for front-end frameworks. While some strives to survive Web Forms in the Age of .NET 5/6+[[1]](https://blog.inedo.com/dotnet/net5-web-forms), others seek ways to migrate or even quit. 
 
+When comparing .NET Core to NodeJS, my scale is not on any language or environment heritage. While .NET Core is still under heavy development, NodeJS attains a more mature and fast-growing society, it is more lightweight and flexible, fits for both baremetal and docker deployment. As a bonus, NodeJS integrates seamlessly with MongoDB and Redis, some state-of-the-art packages can not do without. 
+
 
 ## II. The Brothers NodeJS
 
