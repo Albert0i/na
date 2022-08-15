@@ -2,9 +2,9 @@
 Node-tify TA project 
 
 ## Forward
-I have a story, i.e. **TA**, but I won't tell you, not because it is insignificant, just because I don't want to... Being stagnated in a pond for over two decades, I became so accustomed to the placid posture of it. The way of gearing things up, the steps to do things right I was so acquaintance with. They just deeply implanted in my brain. 
+I have a story, i.e. **TA**, but I won't tell you, not because it is insignificant, just because I don't want to... Being stagnated in a pond for over two decades, I became so accustomed to the placid posture of it. The way of gearing things up, the steps to do things right with which I was so acquaintance. They just deeply implanted in my brain unconsciously. 
 
-A few years ago, I came across other *way* when I was finding means to *modernize* my artefacts. All the works proved to be in vain, just like changing the clothes of a dying man doesn't prevent him from cessation, the only the effect was a new shroud to on old carcase. At the first sight, I was startled and dropped to faint immediately at the velocity and delicacy. After finishing **TA2**, I decided to abandon my old ways and old days. 
+Two years ago, I came across the other *way* when I was finding means to *modernize* my artefacts. All my works proved to be in vain, as you may know, changing the clothes of a dying man doesn't prevent him from cessation, the only the effect was putting a new shroud on an old carcase... At the first sight, I was startled and dropped to faint immediately at it's velocity and delicacy. After finishing **TA2**, I decided to renounce my old ways and old days. 
 
 ## I. Back to HTTP
 <a href="https://docs.microsoft.com/en-us/aspnet/web-forms/">ASP.NET Web Forms</a> employs a simplified model to facilitate creation of web pages. The discussion of pros and cons is voluminous. 
