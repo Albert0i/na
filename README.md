@@ -19,32 +19,39 @@ When comparing .NET Core to NodeJS, my scale is not on any language or environme
 
 
 ## II. The Brothers NodeJS
+<a href="https://www.npmjs.com/package/express">express</a>
+> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+
+<a href="https://www.mongodb.com/">MongoDB</a>
+> MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. 
+
+<a href="https://redis.io/">Redis</a>
+> Redis (Remote Dictionary Server) is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. 
 
 
 ## III. The importance of having a Model
+<a href="https://mongoosejs.com/">Mongoose</a>
+> Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 
-## IV. 
+## IV. <a href="https://pm2.keymetrics.io/">PM2</a>
+> PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
 
 
-## V. PM2 
+## V. Summary 
+[link](http://140.238.40.147:3000/task) 
 
 
-## VI. Summary 
-[na](http://140.238.40.147:3000/task) 
-
-
-## VII. Reference
+## VI. Reference
 1. <a href="https://blog.inedo.com/dotnet/net5-web-forms">Web Forms in the Age of .NET 5/6+: Planning for the Long Term</a>
 2. <a href="https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8">ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8</a>
 
 2. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>
-3. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP response status codes</a>
 
 
-## VIII. Appendix
+## VII. Appendix
 
-1. .env file
+.env file
 ```
 # Server port 
 PORT = 3000
@@ -55,8 +62,6 @@ MONGODB_URI = "mongodb+srv://your_mongodb_server_url"
 # Redis
 REDIS_URI = "redis://your_redis_server_url"
 ```
-2. npm install 
 
-3. npm run dev
 
 ## EOF (2022/08/15)
