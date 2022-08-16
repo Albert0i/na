@@ -52,8 +52,83 @@ app.listen(port, () => {
 ## IV. [EJS](https://ejs.co/)
 >EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
 
+
 ## V. [PM2](https://pm2.keymetrics.io/)
 > PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
+
+![pm2 examples](img/pm2_examples.JPG)
+
+### Local server
+Start
+```bash
+    pm2 start server.js --name na --watch
+```
+Stop
+```bash
+    pm2 stop na
+```
+Delete
+```bash
+    pm2 delete na
+```
+
+### Remote server
+Setup
+```bash
+    pm2 deploy production setup
+```
+Edit ecosystem.config.js
+```javascript 
+module.exports = {
+    apps : [{
+      name: "na",
+      script: 'server.js',
+      instances: 4,
+      exec_mode: "cluster",
+      watch: '.',
+      env_production: {
+        NODE_ENV: "production"
+      }
+    }],
+    deploy : {
+      production : {
+        key: "../ssh-key-2022-05-09(2).pem",
+        user : 'ubuntu',
+        host : '140.238.40.147',
+        ssh_options: "StrictHostKeyChecking=no",
+        ref  : 'origin/main',
+        repo : 'https://github.com/Albert0i/na.git',
+        path : '/home/ubuntu/na',
+        'pre-setup' : '',
+        'post-setup' : '', 
+        'pre-deploy-local': '',
+        'pre-deploy' : '', 
+        'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production '
+      }
+    }
+  };
+```
+Deploy 
+```bash            
+    pm2 deploy production
+```
+Update 
+```bash  
+    pm2 deploy production update 
+    pm2 deploy production update --force
+```
+list previous deploy commits
+```bash
+    pm2 deploy production list
+```
+execute the given <cmd>  
+```bash  
+    pm2 deploy production exec pm2 list
+```
+Help
+```bash
+    pm2 deploy help
+```
 
 
 ## VI. Summary 
