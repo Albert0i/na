@@ -19,6 +19,19 @@ When comparing .NET Core to NodeJS, my scale is not on any language or environme
 
 
 ## II. The Brothers NodeJS
+server.js
+```javascript
+const express = require('express')
+const app = express()
+. . . 
+app.use('/task', taskRoute)
+app.use('/user', userRoute)
+. . . 
+app.listen(port, () => {
+    console.log(`Application started on port ${port}`)
+})
+```
+
 <a href="https://www.npmjs.com/package/express">express</a>
 > Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
