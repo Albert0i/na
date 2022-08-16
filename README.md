@@ -117,6 +117,8 @@ Update
     pm2 deploy production update 
     pm2 deploy production update --force
 ```
+![pm2 deploy production updates](img/pm2_deploy_production_update.JPG)
+
 list previous deploy commits
 ```bash
     pm2 deploy production list
