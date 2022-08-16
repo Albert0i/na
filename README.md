@@ -56,9 +56,9 @@ app.listen(port, () => {
 ## V. [PM2](https://pm2.keymetrics.io/)
 > PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
 
+### Local server
 ![pm2 examples](img/pm2_examples.JPG)
 
-### Local server
 Start and daemonize an app, with a name and keeping watching on source changes (default). 
 ```bash
     pm2 start server.js --name na --watch
@@ -82,6 +82,8 @@ Stop and delete a process from pm2 process list
 ```
 
 ### Remote server
+![pm2 deploy help](img/pm2_deploy_help.JPG)
+
 Setup
 ```bash
     pm2 deploy production setup
@@ -128,17 +130,13 @@ Update
 ```
 ![pm2 deploy production updates](img/pm2_deploy_production_update.JPG)
 
-list previous deploy commits
+List previous deploy commits
 ```bash
     pm2 deploy production list
 ```
-execute the given <cmd>  
+Execute the given command  
 ```bash  
     pm2 deploy production exec pm2 list
-```
-Help
-```bash
-    pm2 deploy help
 ```
 
 
