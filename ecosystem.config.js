@@ -48,8 +48,8 @@ module.exports = {
   Deploy 
     pm2 deploy production
   
-  Update pm2 deploy production update 
-    
+  Update 
+    pm2 deploy production update 
     pm2 deploy production update --force
 
   list previous deploy commits
