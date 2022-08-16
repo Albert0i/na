@@ -151,7 +151,10 @@ Help
 ## VII. Reference
 1. [Web Forms in the Age of .NET 5/6+: Planning for the Long Term](https://blog.inedo.com/dotnet/net5-web-forms)
 2. [ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)
-3. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+3. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
+4. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
+5. [EASY DEPLOY WITH SSH](https://pm2.io/docs/runtime/guide/easy-deploy-with-ssh/)
+6. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
 
 ## VIII. Appendix
