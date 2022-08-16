@@ -10,15 +10,15 @@ Two years ago, I came across the other *way* when I was finding means to *modern
 While sitting miserably doesn't change anything. I decided to renounce my old ways, my old days and search for new dream, new deed, of course, with new way. 
 
 
-## I. Back to HTTP, Back to Normal
-<a href="https://docs.microsoft.com/en-us/aspnet/web-forms/">ASP.NET Web Forms</a> employs a simplified model to facilitate creation of web pages. The discussion of pros and cons is voluminous. The good things is it alleviates the burden of learning the underlay <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a> protocol, which gives novices a quick start. The bad things is, by default, you can not use HTTP verbs other than GET and POST<sup>[[2]](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)</sup>and no intrinsic <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">RESTFul</a> URI support. 
+## I. Back to [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP), Back to Normal
+[ASP.NET Web Forms](https://docs.microsoft.com/en-us/aspnet/web-forms/) employs a simplified model to facilitate creation of web pages. The discussion of pros and cons is voluminous. The good things is it alleviates the burden of learning the underlay HTTP protocol, which gives novices a quick start. The bad things is, by default, you can not use HTTP verbs other than GET and POST<sup>[[2]](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)</sup>and no intrinsic [RESTFul](https://en.wikipedia.org/wiki/Representational_state_transfer) URI support. 
 
-HTTP verbs such as PUT and DELETE are important when <a href="https://www.w3schools.com/js/js_ajax_intro.asp">AJAX</a> comes into play, RESTful URI are important when implementing API for front-end frameworks. While some strives to survive Web Forms in the Age of .NET 5/6+<sup>[[1]](https://blog.inedo.com/dotnet/net5-web-forms)</sup>, others seek ways to migrate or quit. 
+HTTP verbs such as PUT and DELETE are important when [AJAX](https://www.w3schools.com/js/js_ajax_intro.asp) comes into play, RESTful URI are important when implementing API for front-end frameworks. While some strives to survive Web Forms in the Age of .NET 5/6+<sup>[[1]](https://blog.inedo.com/dotnet/net5-web-forms)</sup>, others seek ways to migrate or quit. 
 
 When comparing .NET Core to NodeJS, my scale is not on any language or environment heritage. While .NET Core is still under heavy development, NodeJS attains a more mature and fast-growing society, it is more lightweight and flexible, fits for both Bare-metal and Docker deployment. As a bonus, NodeJS integrates seamlessly with MongoDB and Redis, some state-of-the-art packages can not do without. 
 
 
-## II. The Brothers NodeJS
+## II. The Brothers [NodeJS](https://nodejs.org/en/)
 server.js
 ```javascript
 const express = require('express')
@@ -32,27 +32,27 @@ app.listen(port, () => {
 })
 ```
 
-<a href="https://www.npmjs.com/package/express">express</a>
+[express](https://www.npmjs.com/package/express)
 > Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-<a href="https://www.mongodb.com/">MongoDB</a>
+[MongoDB](https://www.mongodb.com/)
 > MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. 
 
-<a href="https://redis.io/">Redis</a>
+[Redis](https://redis.io/)
 > Redis (Remote Dictionary Server) is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. 
 
 
 ## III. The importance of being Model
 [![渡邊直美展 naomis party in taipe](img/Naomi_Party_in_TAIPEI.jpg)](https://rin.tw/naomis/)
 
-<a href="https://mongoosejs.com/">Mongoose</a>
+[Mongoose](https://mongoosejs.com/)
 > Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 
-## IV. <a href="https://ejs.co/">EJS</a>
+## IV. [EJS](https://ejs.co/)
 >EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
 
-## V. <a href="https://pm2.keymetrics.io/">PM2</a>
+## V. [PM2](https://pm2.keymetrics.io/)
 > PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
 
 
@@ -61,10 +61,9 @@ app.listen(port, () => {
 
 
 ## VII. Reference
-1. <a href="https://blog.inedo.com/dotnet/net5-web-forms">Web Forms in the Age of .NET 5/6+: Planning for the Long Term</a>
-2. <a href="https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8">ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8</a>
-
-2. <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>
+1. [Web Forms in the Age of .NET 5/6+: Planning for the Long Term](https://blog.inedo.com/dotnet/net5-web-forms)
+2. [ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)
+3. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
 
 ## VIII. Appendix
