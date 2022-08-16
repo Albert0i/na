@@ -59,15 +59,24 @@ app.listen(port, () => {
 ![pm2 examples](img/pm2_examples.JPG)
 
 ### Local server
-Start
+Start and daemonize an app, with a name and keeping watching on source changes (default). 
 ```bash
     pm2 start server.js --name na --watch
 ```
-Stop
+Stop a process
 ```bash
     pm2 stop na
 ```
-Delete
+Restart a process
+```bash
+    pm2 restart na
+```
+List all processes
+```bash
+pm2 list
+```
+![pm2 list](img/pm2_list.JPG)
+Stop and delete a process from pm2 process list
 ```bash
     pm2 delete na
 ```
@@ -134,7 +143,9 @@ Help
 
 
 ## VI. Summary 
-[link](http://140.238.40.147:3000/task) 
+![soource tree](img/na_tree.JPG)
+
+[Live Site](http://140.238.40.147:3000/task) 
 
 
 ## VII. Reference
