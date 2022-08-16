@@ -29,7 +29,9 @@ When comparing .NET Core to NodeJS, my scale is not on any language or environme
 > Redis (Remote Dictionary Server) is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. 
 
 
-## III. The importance of having a Model
+## III. The importance of being Model
+[![渡邊直美展 naomis party in taipe](img/Naomi’s_Party_in_TAIPEI.JPG)](https://rin.tw/naomis/)
+
 <a href="https://mongoosejs.com/">Mongoose</a>
 > Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
@@ -67,4 +69,4 @@ REDIS_URI = "redis://your_redis_server_url"
 ```
 
 
-## EOF (2022/08/15)
+## EOF (2022/08/16)
