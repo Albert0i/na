@@ -30,7 +30,7 @@ When comparing .NET Core to NodeJS, my scale is not on any language or environme
 
 
 ## III. The importance of being Model
-[![渡邊直美展 naomis party in taipe](img/Naomi_Party_in_TAIPEI.JPG)](https://rin.tw/naomis/)
+[![渡邊直美展 naomis party in taipe](img/Naomi_Party_in_TAIPEI.jpg)](https://rin.tw/naomis/)
 
 <a href="https://mongoosejs.com/">Mongoose</a>
 > Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
