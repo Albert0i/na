@@ -41,7 +41,7 @@ app.listen(port, () => {
 [MongoDB](https://www.mongodb.com/)
 > MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. 
 
-The flexibility of MongoDB as a schemaless database is one of its strengths. If we would like to be more restrictive and have a really fixed schema for the collection we need to add the additionalProperties: false parameter in the createCollection command.
+The flexibility of MongoDB as a schemaless database is one of its strengths. If we would like to be more restrictive and have a really fixed schema for the collection we need to add the `additionalProperties: false` parameter in the createCollection command.
 
 ```javascript
 db.createCollection( "people" , {
