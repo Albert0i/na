@@ -211,10 +211,11 @@ Execute the given command
 3. [MongoDB Data Validator: How to Use the JSON Schema Validator](https://www.percona.com/blog/2018/08/16/mongodb-how-to-use-json-schema-validator/)
 4. [Schema Validationicons](https://docs.mongodb.com/manual/core/schema-validation/)
 5. [What is the Difference Between Code First and Database First Approach in MVC](https://pediaa.com/what-is-the-difference-between-code-first-and-database-first-approach-in-mvc/)
-6. [Difference between code beside and code behind](https://stackoverflow.com/questions/5924426/difference-between-code-beside-and-code-behind)
-7. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
-8. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
-9. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+6. [Redis 101: Foundation and Core Concepts](https://medium.com/@Mohammad_Hasham123/redis-101-foundation-and-core-concepts-41f32c2bf021)
+7. [Difference between code beside and code behind](https://stackoverflow.com/questions/5924426/difference-between-code-beside-and-code-behind)
+8. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
+9. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
+10. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
 
 ## VIII. Appendix
