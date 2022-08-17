@@ -112,10 +112,93 @@ app.use(session(sess))
 
 > Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
+task.js
+```javascript
+ const mongoose = require('mongoose');
+ const Schema = mongoose.Schema;
+ 
+ const TaskSchema = new Schema({     
+     taname: {
+         type: String,
+         required: true, 
+         index: true, 
+         lowercase: true
+     },
+     tatype: {
+         type: String,
+         required: true
+     },
+     tadate: {
+         type: Number,
+         required: true
+     },
+     taappnum: String,
+     tafamrep: String,
+     taremark: String
+    },
+    { 
+        timestamps: true
+    });
+ 
+ module.exports = mongoose.model('Task', TaskSchema);
+```
 
 ## IV. [EJS](https://ejs.co/) - A Taste of the Past
 >EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
 
+index.ejs
+```javascript
+. . . 
+<body>
+    <%- include('header.ejs'); %>
+
+    <%- include('create_edit.ejs'); %>
+    <hr>
+    <h3><a href="/task">所有工作</a></h3>
+    <% if (locals.tasks.length > 0 ) { %>  
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>工作類型</th>
+                    <th>工作日期</th>
+                    <th>申請表編號</th>
+                    <th>家團代表</th>
+                    <th>工作備註</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tdody><% locals.tasks.forEach( t => { %>
+                    <tr>
+                        <td><%= t.tatype %></td>
+                        <td><%= t.tadate %></td>
+                        <td><%= t.taappnum %></td>
+                        <td><%= t.tafamrep %></td>
+                        <td><%= t.taremark %></td>
+                        <td>                            
+                            <form action="/task?id=<%= t._id %>" method="GET">
+                                <input type="hidden" name="id" value="<%= t._id %>">
+                                <button type="submit">Edit</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/task/delete/<%= t._id %>?_method=DELETE" method="POST">
+                                <button type="submit" onclick="return confirm('Are you sure?')">Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tdody>
+        </table>
+    <% } else { %> 
+        <p>沒有工作</p>
+    <% } %>
+
+    <%- include('footer.ejs'); %>
+</body>
+. . . 
+```
 
 ## V. [PM2](https://pm2.keymetrics.io/) - Get Job Done!
 > PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
