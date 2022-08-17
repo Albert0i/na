@@ -19,6 +19,10 @@ When comparing .NET Core with NodeJS, my scale is not on any language or environ
 
 
 ## II. The Brothers [NodeJS](https://nodejs.org/en/)
+```javascript
+    npm init -y 
+```
+
 server.js
 ```javascript
 const express = require('express')
@@ -38,8 +42,64 @@ app.listen(port, () => {
 [MongoDB](https://www.mongodb.com/)
 > MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. 
 
+The flexibility of MongoDB as a schemaless database is one of its strengths. If we would like to be more restrictive and have a really fixed schema for the collection we need to add the additionalProperties: false parameter in the createCollection command.
+
+```javascript
+db.createCollection( "people" , {
+   validator: {
+     $jsonSchema: 
+	 {
+        bsonType: "object",
+        additionalProperties: false,
+		required: ["name","age"],
+        properties: {
+           _id : {
+              bsonType: "objectId" },
+           name: {
+              bsonType: "string",
+              description: "required and must be a string" },
+           age: {
+              bsonType: "int",
+              minimum: 0,
+              maximum: 100,
+              description: "required and must be in the range 0-100" }
+		}
+	}
+}})
+```
+In this case, we don’t have flexibility, and that is the main benefit of having a NoSQL database like MongoDB. It’s up to you to use it or not. It depends on the nature and goals of your application. I wouldn’t recommend it in most cases.
+
 [Redis](https://redis.io/)
 > Redis (Remote Dictionary Server) is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. 
+
+> The default server-side session storage, MemoryStore, is purposely not designed for a production environment. It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing.
+
+```javascript
+const session = require("express-session");
+const Redis = require("ioredis");
+. . . 
+// Local session
+let sess = {
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true, 
+    cookie: { 
+      maxAge: 30 * 60 * 1000   // in milliseconds
+    }
+}
+// if Redis is defined, it should be Redis session
+if (process.env.REDIS_URI)
+{
+    let RedisStore = require("connect-redis")(session);
+    let RedisClient = new Redis(process.env.REDIS_URI);
+    sess.store = new RedisStore({ client: RedisClient })
+    RedisClient.on('connect', () => {
+        console.log('Connected to Redis Server.')
+        RedisClient.set('hello', format(new Date(), 'yyyy-MM-dd hh:mm:ss'));
+    })    
+}
+app.use(session(sess))
+```
 
 
 ## III. The importance of being Model
@@ -149,9 +209,11 @@ Execute the given command
 ## VII. Reference
 1. [Web Forms in the Age of .NET 5/6+: Planning for the Long Term](https://blog.inedo.com/dotnet/net5-web-forms)
 2. [ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)
-3. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
-4. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
-5. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+3. [MongoDB Data Validator: How to Use the JSON Schema Validator](https://www.percona.com/blog/2018/08/16/mongodb-how-to-use-json-schema-validator/)
+4. [Schema Validationicons](https://docs.mongodb.com/manual/core/schema-validation/)
+5. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
+6. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
+7. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
 
 ## VIII. Appendix
