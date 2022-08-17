@@ -22,7 +22,7 @@ When comparing .NET Core with NodeJS, my scale is not on any language or environ
 ```javascript
     npm init -y 
 ```
-[express](https://www.npmjs.com/package/express)
+### [express](https://www.npmjs.com/package/express)
 > Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
 server.js
@@ -38,7 +38,7 @@ app.listen(port, () => {
 })
 ```
 
-[MongoDB](https://www.mongodb.com/)
+### [MongoDB](https://www.mongodb.com/)
 > MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. 
 
 The flexibility of MongoDB as a schemaless database is one of its strengths. If we would like to be more restrictive and have a really fixed schema for the collection we need to add the `additionalProperties: false` parameter in the createCollection command.
@@ -68,7 +68,7 @@ db.createCollection( "people" , {
 ```
 In this case, we don’t have flexibility, and that is the main benefit of having a NoSQL database like MongoDB. It’s up to you to use it or not. It depends on the nature and goals of your application. I wouldn’t recommend it in most cases.
 
-[Redis](https://redis.io/)
+### [Redis](https://redis.io/)
 > Redis (Remote Dictionary Server) is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. 
 
 The default server-side session storage, MemoryStore, is purposely not designed for a production environment. It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing.
