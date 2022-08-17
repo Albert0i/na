@@ -22,6 +22,8 @@ When comparing .NET Core with NodeJS, my scale is not on any language or environ
 ```javascript
     npm init -y 
 ```
+[express](https://www.npmjs.com/package/express)
+> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
 server.js
 ```javascript
@@ -35,9 +37,6 @@ app.listen(port, () => {
     console.log(`Application started on port ${port}`)
 })
 ```
-
-[express](https://www.npmjs.com/package/express)
-> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
 [MongoDB](https://www.mongodb.com/)
 > MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. 
@@ -72,7 +71,7 @@ In this case, we don’t have flexibility, and that is the main benefit of havin
 [Redis](https://redis.io/)
 > Redis (Remote Dictionary Server) is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. 
 
-> The default server-side session storage, MemoryStore, is purposely not designed for a production environment. It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing.
+The default server-side session storage, MemoryStore, is purposely not designed for a production environment. It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing.
 
 ```javascript
 const session = require("express-session");
