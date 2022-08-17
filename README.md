@@ -108,11 +108,11 @@ app.use(session(sess))
 > Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 
-## IV. [EJS](https://ejs.co/)
+## IV. [EJS](https://ejs.co/) - A Taste of the Past
 >EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
 
 
-## V. [PM2](https://pm2.keymetrics.io/)
+## V. [PM2](https://pm2.keymetrics.io/) - Get Job Done!
 > PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
 
 ### Local server
