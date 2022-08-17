@@ -10,7 +10,7 @@ Two years ago, I came across the other *way* when I was finding means to *modern
 While sitting miserably doesn't change anything. I decided to renounce my old ways, my old days and search for new dream, new deed, of course, with new way. 
 
 
-## I. Back to [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP), Back to Normal
+## I. [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) - Back to Normal
 [ASP.NET Web Forms](https://docs.microsoft.com/en-us/aspnet/web-forms/) employs a simplified model to facilitate creation of web pages. The discussion of pros and cons is voluminous. The good things is it alleviates the burden of learning the underlay HTTP protocol, which gives novices a quick start. The bad things is, by default, you can not use HTTP verbs other than GET and POST<sup>[[2]](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)</sup>and no intrinsic [RESTFul](https://en.wikipedia.org/wiki/Representational_state_transfer) URI support. 
 
 HTTP verbs such as PUT and DELETE are important when [AJAX](https://www.w3schools.com/js/js_ajax_intro.asp) comes into play, RESTful URI are important when implementing API for front-end frameworks. While some strives to survive Web Forms in the Age of .NET 5/6+<sup>[[1]](https://blog.inedo.com/dotnet/net5-web-forms)</sup>, others seek ways to migrate or quit. 
@@ -18,7 +18,7 @@ HTTP verbs such as PUT and DELETE are important when [AJAX](https://www.w3school
 When comparing .NET Core with NodeJS, my scale is not on any language or environment heritage. While .NET Core is still under heavy development, NodeJS attains a more mature and fast-growing society, it is lightweight and more flexible, fits for both Bare-metal and Docker deployment. As a bonus, NodeJS integrates seamlessly with MongoDB and Redis, some state-of-the-art packages can not do without. 
 
 
-## II. The Brothers [NodeJS](https://nodejs.org/en/)
+## II. [npm](https://www.npmjs.com/) - The Brothers [NodeJS](https://nodejs.org/en/)
 ```javascript
     npm init -y 
 ```
@@ -101,10 +101,9 @@ app.use(session(sess))
 ```
 
 
-## III. The importance of being Model
+## III. [Mongoose](https://mongoosejs.com/) - The importance of being Model
 [![渡邊直美展 naomis party in taipe](img/Naomi_Party_in_TAIPEI.jpg)](https://rin.tw/naomis/)
 
-[Mongoose](https://mongoosejs.com/)
 > Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 
