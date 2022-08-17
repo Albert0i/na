@@ -233,4 +233,4 @@ REDIS_URI = "redis://your_redis_server_url"
 ```
 
 
-## EOF (2022/08/16)
+## EOF (2022/08/17)
