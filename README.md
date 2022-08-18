@@ -144,7 +144,13 @@ task.js
 ```
 
 ## IV. [EJS](https://ejs.co/) - A Taste of the Past
->EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
+>EJS is a simple templating language that lets you generate HTML markup with plain JavaScript. 7No religiousness about how to organize things. No reinvention of iteration and control-flow. It's just plain JavaScript.
+
+One of the best feature of ASP.NET Web Forms is to enable user to place code in separate file, i.e. **code behind**. Source code and HTML code are cleanly separated. 
+![code behind beside](img/code_behind_beside.JPG)
+
+While legacy ASP writes source code and HTML code side-by-side, i.e. **code beside**. Source code and HTML code can mess up easily. 
+![code behind beside](img/asp-era-1.JPG) 
 
 index.ejs
 ```javascript
@@ -298,12 +304,9 @@ Execute the given command
 2. [ASP.NET Web API - PUT & DELETE Verbs Not Allowed - IIS 8](https://stackoverflow.com/questions/10906411/asp-net-web-api-put-delete-verbs-not-allowed-iis-8)
 3. [MongoDB Data Validator: How to Use the JSON Schema Validator](https://www.percona.com/blog/2018/08/16/mongodb-how-to-use-json-schema-validator/)
 4. [Schema Validationicons](https://docs.mongodb.com/manual/core/schema-validation/)
-5. [What is the Difference Between Code First and Database First Approach in MVC](https://pediaa.com/what-is-the-difference-between-code-first-and-database-first-approach-in-mvc/)
-6. [Redis 101: Foundation and Core Concepts](https://medium.com/@Mohammad_Hasham123/redis-101-foundation-and-core-concepts-41f32c2bf021)
-7. [Difference between code beside and code behind](https://stackoverflow.com/questions/5924426/difference-between-code-beside-and-code-behind)
-8. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
-9. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
-10. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+5. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
+6. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
+7. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
 
 ## VIII. Appendix
@@ -321,4 +324,4 @@ REDIS_URI = "redis://your_redis_server_url"
 ```
 
 
-## EOF (2022/08/17)
+## EOF (2022/08/19)
