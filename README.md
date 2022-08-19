@@ -324,6 +324,7 @@ REDIS_URI = "redis://your_redis_server_url"
 
 source tree:
 ```
+.
 ├── README.md
 ├── controller
 │   ├── taskController.js
@@ -359,7 +360,14 @@ source tree:
 └── views
     ├── 404.ejs
     ├── task
+    │   ├── create_edit.ejs
+    │   ├── footer.ejs
+    │   ├── header.ejs
+    │   ├── index.ejs
+    │   └── options.ejs
     └── user
+        ├── login.ejs
+        └── signup.ejs
 ```
 
 ## EOF (2022/08/19)
