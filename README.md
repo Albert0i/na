@@ -355,8 +355,6 @@ source tree:
 │   ├── taskRoute.js
 │   └── userRoute.js
 ├── server.js
-├── testdb.js
-├── testredis.js
 └── views
     ├── 404.ejs
     ├── task
