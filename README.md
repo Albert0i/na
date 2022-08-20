@@ -296,7 +296,12 @@ Execute the given command
 
 
 ## VI. Summary 
-[Live Site](http://140.238.40.147:3000/task) 
+
+### Links online
+
+&emsp;[http](http://140.238.40.147/task)
+
+&emsp;[https](https://140.238.40.147:443/task)
 
 
 ## VII. Reference
