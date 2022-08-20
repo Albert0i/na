@@ -209,6 +209,8 @@ index.ejs
 ## V. [PM2](https://pm2.keymetrics.io/) - Get Job Done!
 > PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
 
+Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free Tier)](https://github.com/Albert0i/node-docker/blob/main/swarm.md) and [deploy](https://github.com/Albert0i/node-docker/blob/main/NFUD.md) a NodeJS app on it. As a lightweight alternative, PM2 can be used to launch your app or deploy your code to remote host.   
+
 ### Local server
 ![pm2 examples](img/pm2_examples.JPG)
 
