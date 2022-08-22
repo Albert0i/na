@@ -3,9 +3,11 @@ const Option = require('../model/Option');
 const { format } = require('date-fns'); 
 
 const task_index = async (req, res) => {
-    let options = await Option.find().sort({'tord': 1})
+    let options = await Option.find()
+        .sort({'tord': 1})
     
     Task.find({ taname: req.session.username })
+        .select({ createdAt: 0, updatedAt: 0 } )
         .then(data => {
             let t = {
                     tatype: '工作', 
