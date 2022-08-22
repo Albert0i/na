@@ -350,7 +350,8 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 5. [Schema Validationicons](https://docs.mongodb.com/manual/core/schema-validation/)
 6. [Scaling Node.js Applications With PM2 Clusters](https://medium.com/geekculture/scaling-node-js-applicationswith-pm2-clusters-c216c4468d66)
 7. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
-8. [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+8. [PM2 | Listening on port 80 w/o root](https://pm2.keymetrics.io/docs/usage/specifics/#listening-on-port-80-w-o-root)
+9. [Markdown Guide | Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 
 
 ## VIII. Appendix
