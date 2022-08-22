@@ -207,9 +207,37 @@ index.ejs
 ```
 
 ## V. [PM2](https://pm2.keymetrics.io/) - Get Job Done!
-> PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
+> Since Node.js is built on top of the V8 JavaScript engine, it is single-threaded. So our app logic runs on one thread and hence doesn’t fully utilize the available system resources.
+>
+> This might not be a serious problem for event-based I/O calls, because the event loop is efficient enough for most use cases at moderate traffic loads. The problem occurs when we have a computationally intensive logic that might potentially block the thread or when we have a sudden spike in our traffic that could potentially increase the latency of our services.
 
-Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free Tier)](https://github.com/Albert0i/node-docker/blob/main/swarm.md) and [deploy](https://github.com/Albert0i/node-docker/blob/main/NFUD.md) a NodeJS app on it. As a lightweight alternative, PM2 can be used to launch your app or deploy your code to remote host.   
+http.js
+```javascript
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+  console.log(req.url)
+    if (req.url === '/') {
+      res.end('Home page')
+    }
+    else
+    if (req.url === '/about') {
+      console.time()
+      for (let i=0; i< 1000; i++)
+        for (let j=0; j < 1000; j++)
+            console.log(`i=${i}, j=${j}`)
+      console.timeEnd()
+      res.end('About page')
+    }
+    else
+    res.end('Error page')
+})
+
+server.listen(5000)
+```
+A request to ``/about`` will block subsequent ``/`` request. 
+
+> PM2 internally uses the Node.js cluster module, but everything including the edge cases is handled for us and we don’t even have to touch our existing code to get this working.
 
 ### Local server
 ![pm2 examples](img/pm2_examples.JPG)
@@ -274,6 +302,14 @@ module.exports = {
     }
   };
 ```
+1. ``exec_mode: "cluster"`` tells PM2 to use the Node.js cluster module to execute the code.
+
+2. ``instances:0`` when this is set to 0, PM2 will automatically spawn a number of child processes that are equal to the available number of cores. Respawning on termination is handled out of the box. <u>It is important to note that, we could spawn more child processes than the number of CPU cores available, but that wouldn’t be a good idea, because it would create a scheduling overhead and in that way, we might end up doing worse than better.</u>
+
+3. ``"post-deploy": "npm install && pm2 reload ecosystem.config.js -env production"`` the key thing to note here is pm2 reload which will make a zero-downtime deployment by adopting a rolling deployment approach where the instances are stoped and launched with the latest changes one after the other.
+
+4. It is also interesting to note that the config can have multiple Node applications within the app array (think of a **microservices** scenario).
+
 Deploy 
 ```bash            
     pm2 deploy production
@@ -296,12 +332,14 @@ Execute the given command
 
 
 ## VI. Summary 
+> PM2 is a daemon process manager that will help you manage and keep your application online. Getting started with PM2 is straightforward, it is offered as a simple and intuitive CLI, installable via NPM.
+
+Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free Tier)](https://github.com/Albert0i/node-docker/blob/main/swarm.md) and [deploy](https://github.com/Albert0i/node-docker/blob/main/NFUD.md) a NodeJS app on it. As a lightweight alternative, PM2 can be used to launch your app or deploy your code to remote host.   
+
 
 ### Links online
 
-&emsp;[http](http://140.238.40.147/task)
-
-&emsp;[https](https://140.238.40.147:443/task)
+&emsp;[task](http://140.238.40.147:3000/task)
 
 
 ## VII. Reference
@@ -375,4 +413,4 @@ source tree:
         └── signup.ejs
 ```
 
-## EOF (2022/08/19)
+## EOF (2022/08/26)
