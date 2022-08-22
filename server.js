@@ -1,3 +1,12 @@
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
+const privateKey  = fs.readFileSync('ssl/key.pem', 'utf8');
+const certificate = fs.readFileSync('ssl/cert.pem', 'utf8');
+
+const credentials = {key: privateKey, cert: certificate};
+
+// Begin your express configuration 
 require('dotenv').config()
 const express = require('express')
 var methodOverride = require('method-override')
@@ -84,11 +93,25 @@ app.use((req, res) => {
   res.status(404).render('404');
 });
 
-app.listen(port, () => {
+// End your express configuration 
+// app.listen(port, () => {
+//     console.log(`Application started on port ${port}`)
+//     if (process.env.PUBLIC_IP)
+//       console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
+// })
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(port, ()=>{
     console.log(`Application started on port ${port}`)
     if (process.env.PUBLIC_IP)
       console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
-})
+});
+httpsServer.listen(443, ()=>{
+  console.log(`Application started on port 443`)
+});
+
 /*
   Reference: 
   pm2 
