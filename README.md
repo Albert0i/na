@@ -339,7 +339,7 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 
 ### Links online
 
-&emsp;[task](http://140.238.40.147:3000/task)
+&emsp;[http](http://140.238.40.147/task)
 
 
 ## VII. Reference
