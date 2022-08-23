@@ -3,34 +3,35 @@ const http = require('http');
 const https = require('https');
 const privateKey  = fs.readFileSync('ssl/key.pem', 'utf8');
 const certificate = fs.readFileSync('ssl/cert.pem', 'utf8');
-
 const credentials = {key: privateKey, cert: certificate};
 
 // Begin your express configuration 
 require('dotenv').config()
 const express = require('express')
-var methodOverride = require('method-override')
+const rateLimit = require('express-rate-limit')
+const methodOverride = require('method-override')
 const session = require("express-session");
 const Redis = require("ioredis");
 const mongoose = require("mongoose");
 const { format } = require('date-fns'); 
-//const rateLimit = require('express-rate-limit')
 const morgan = require('morgan')
 
 const app = express()
 const port = process.env.PORT || 3000
+const port_https = process.env.PORT_HTTPS || 443
+const max_request = process.env.MAX_REQUEST_PER_MINUTE || 100
+
 const taskRoute = require('./routes/taskRoute')
 const userRoute = require('./routes/userRoute')
 
-// const apiLimiter = rateLimit({
-// 	windowMs: 15 * 60 * 1000, // 15 minutes
-// 	max: 100,                 // Limit each IP to 100 requests per `window` (here, per 15 minutes)
-// 	standardHeaders: true,    // Return rate limit info in the `RateLimit-*` headers
-// 	legacyHeaders: false,     // Disable the `X-RateLimit-*` headers
-// })
-
-// // Apply the rate limiting middleware
-// app.use('/', apiLimiter)
+const requestLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000,  // 1 minute
+  max: max_request,         // limit each IP to max requests per windowMs 
+  standardHeaders: true,    // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false,     // Disable the `X-RateLimit-*` headers
+})
+// Use the limit rule as an application middleware
+app.use(requestLimiter)
 
 app.use(morgan('dev'))
 
@@ -108,8 +109,8 @@ httpServer.listen(port, ()=>{
     if (process.env.PUBLIC_IP)
       console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
 });
-httpsServer.listen(443, ()=>{
-  console.log(`Application started on port 443`)
+httpsServer.listen(port_https, ()=>{
+  console.log(`Application started on port ${port_https}`)
 });
 
 /*
