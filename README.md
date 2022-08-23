@@ -354,9 +354,10 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 7. [PM2 one click, multiple servers deploy and publish Node.js project at the same time!](https://programmer.group/61a05b4430e7f.html)   
 8. [PM2 | Listening on port 80 w/o root](https://pm2.keymetrics.io/docs/usage/specifics/#listening-on-port-80-w-o-root)
 9. [Enabling HTTPS on express.js](https://stackoverflow.com/questions/11744975/enabling-https-on-express-js)
-10. [Node.js vs .NET Core: What to Choose in 2022](https://intelvision.pro/blog/node-js-vs-net-core-what-to-choose-in-2022/)
-11. [Web server implementations in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-6.0&tabs=windows)
-12. [Markdown Guide | Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+10. [Limiting Node.js API calls with express-rate-limit](https://dev.to/brunohgv/limiting-node-js-api-calls-with-express-rate-limit-11kl)
+11. [Node.js vs .NET Core: What to Choose in 2022](https://intelvision.pro/blog/node-js-vs-net-core-what-to-choose-in-2022/)
+12. [Web server implementations in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-6.0&tabs=windows)
+13. [Markdown Guide | Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 
 
 ## VIII. Appendix
@@ -365,6 +366,12 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 ```
 # Server port 
 PORT = 3000
+
+# Server port (https)
+PORT_HTTPS = 443
+
+# Server limit
+MAX_REQUEST_PER_MINUTE = 100
 
 # MongoDB 
 MONGODB_URI = "mongodb+srv://your_mongodb_server_url"
