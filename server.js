@@ -37,10 +37,13 @@ app.use(morgan('dev'))
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
-
+// static assets
 app.use(express.static('./public'))
+// parse form data
 app.use(express.urlencoded( {extended: true}))
+// parse json data sent by javascript
 app.use(express.json())
+
 app.set('view engine', 'ejs')
 
 // Local session
