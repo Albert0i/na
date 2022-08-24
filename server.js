@@ -32,9 +32,8 @@ const requestLimiter = rateLimit({
 })
 // Use the limit rule as an application middleware
 app.use(requestLimiter)
-
+// logging
 app.use(morgan('dev'))
-
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
 // static assets
@@ -43,7 +42,7 @@ app.use(express.static('./public'))
 app.use(express.urlencoded( {extended: true}))
 // parse json data sent by javascript
 app.use(express.json())
-
+// use ejs as view engine
 app.set('view engine', 'ejs')
 
 // Local session
@@ -83,6 +82,7 @@ const connectWithRetry = () => {
 connectWithRetry();
 mongoose.connection.on("reconnected", () => console.log('Re-connected to MongoDB Server'));
 
+// home page
 app.get('/', (req, res) => {
   let msg = `Your pid is ${process.pid}, cluster instance is ${process.env.NODE_APP_INSTANCE}`
   console.log(msg)
