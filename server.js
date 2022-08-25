@@ -119,6 +119,14 @@ httpsServer.listen(port_https, ()=>{
     console.log(`Application started on port ${port_https}`)
 });
 
+process.on('uncaughtException', err => {
+  console.error('.-----------------------------.')
+  console.error('| There was an uncaught error |')
+  console.error("'-----------------------------'")
+  console.error(err);
+  process.exit(1); // mandatory (as per the Node.js docs)
+});
+
 /*
   Reference: 
   pm2 
