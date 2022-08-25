@@ -84,7 +84,9 @@ mongoose.connection.on("reconnected", () => console.log('Re-connected to MongoDB
 
 // home page
 app.get('/', (req, res) => {
-  let msg = `Your pid is ${process.pid}, cluster instance is ${process.env.NODE_APP_INSTANCE}`
+  let msg = `Your pid is ${process.pid}.`
+  let msg2 = `, cluster instance is ${process.env.NODE_APP_INSTANCE}`  
+  msg += (process.env.NODE_APP_INSTANCE? msg2 : '.')
   console.log(msg)
   res.status(200).send(msg)
 })  
@@ -107,13 +109,21 @@ app.all('*', (req, res) => {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(port, ()=>{
-    console.log(`Application started on port ${port}`)
-    if (process.env.PUBLIC_IP)
-      console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
+httpServer.listen(port, (err)=>{
+    if (err)
+      console.log(err)
+    else
+    {
+      console.log(`Application started on port ${port}`)
+      if (process.env.PUBLIC_IP)
+        console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
+    }
 });
-httpsServer.listen(port_https, ()=>{
-  console.log(`Application started on port ${port_https}`)
+httpsServer.listen(port_https, (err)=>{
+  if (err)
+    console.log(err)
+  else
+    console.log(`Application started on port ${port_https}`)
 });
 
 /*
