@@ -119,6 +119,8 @@ httpsServer.listen(port_https, ()=>{
     console.log(`Application started on port ${port_https}`)
 });
 
+// Catching uncaught exceptions
+// https://nodejs.dev/en/learn/error-handling-in-nodejs
 process.on('uncaughtException', err => {
   console.error('.-----------------------------.')
   console.error('| There was an uncaught error |')
