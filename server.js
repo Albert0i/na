@@ -109,21 +109,13 @@ app.all('*', (req, res) => {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(port, (err)=>{
-    if (err)
-      console.log(err)
-    else
-    {
-      console.log(`Application started on port ${port}`)
-      if (process.env.PUBLIC_IP)
-        console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
-    }
+httpServer.listen(port, ()=>{
+    console.log(`Application started on port ${port}`)
+    if (process.env.PUBLIC_IP)
+      console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
 });
 
-httpsServer.listen(port_https, (err)=>{
-  if (err)
-    console.log(err)
-  else
+httpsServer.listen(port_https, ()=>{
     console.log(`Application started on port ${port_https}`)
 });
 
