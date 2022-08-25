@@ -24,6 +24,7 @@ When comparing .NET Core with NodeJS, my scale is not on any language or environ
     npm install express
     npm install nodemon --save-dev
     npm install pm2 -g
+    npm install npm-check -g
 
     npm help install
 ```
