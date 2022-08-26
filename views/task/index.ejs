@@ -40,12 +40,12 @@
                             <td>                            
                                 <form action="/task?id=<%= t._id %>" method="GET">
                                     <input type="hidden" name="id" value="<%= t._id %>">
-                                    <button type="submit">Edit</button>
+                                    <button type="submit" class="btn btn-primary">編輯</button>
                                 </form>
                             </td>
                             <td>
                                 <form action="/task/delete/<%= t._id %>?_method=DELETE" method="POST">
-                                    <button type="submit" onclick="return confirm('Are you sure?')">Delete
+                                    <button type="submit" onclick="return confirm('Are you sure?')"  class="btn btn-danger">刪除
                                     </button>
                                 </form>
                             </td>
