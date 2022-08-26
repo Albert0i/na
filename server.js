@@ -1,9 +1,4 @@
-const fs = require('fs');
 const http = require('http');
-const https = require('https');
-const privateKey  = fs.readFileSync('./ssl/key.pem', 'utf8');
-const certificate = fs.readFileSync('./ssl/cert.pem', 'utf8');
-const credentials = {key: privateKey, cert: certificate};
 
 // Begin your express configuration 
 require('dotenv').config()
@@ -18,7 +13,6 @@ const morgan = require('morgan')
 
 const app = express()
 const port = process.env.PORT || 3000
-const port_https = process.env.PORT_HTTPS || 443
 const max_request = process.env.MAX_REQUEST_PER_MINUTE || 100
 
 const taskRoute = require('./routes/taskRoute')
@@ -106,25 +100,36 @@ app.all('*', (req, res) => {
 //       console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
 // })
 
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+// http
+const httpServer = http.createServer(app);
 
 httpServer.listen(port, ()=>{
-    console.log(`Application started on port ${port}`)
+    console.log(`Server is listening on port ${port}`)
     if (process.env.PUBLIC_IP)
       console.log(`http://${process.env.PUBLIC_IP}:${port}/task`)    
 });
 
-httpsServer.listen(port_https, ()=>{
-    console.log(`Application started on port ${port_https}`)
-});
+// Optional https 
+if (process.env.PORT_HTTPS) {
+    const fs = require('fs');
+    const https = require('https');
+    const privateKey  = fs.readFileSync('./ssl/key.pem', 'utf8');
+    const certificate = fs.readFileSync('./ssl/cert.pem', 'utf8');
+    const credentials = {key: privateKey, cert: certificate};
+    const port_https = process.env.PORT_HTTPS
+    const httpsServer = https.createServer(credentials, app);
+
+    httpsServer.listen(port_https, ()=>{
+      console.log(`Server is listening on port ${port_https}`)
+  });
+}
 
 // Catching uncaught exceptions
 // https://nodejs.dev/en/learn/error-handling-in-nodejs
 process.on('uncaughtException', err => {
-  console.error('.-----------------------------.')
-  console.error('| There was an uncaught error |')
-  console.error("'-----------------------------'")
+  console.error('┌──────────────────────────────────────┐')
+  console.error('│      There was an uncaught error     │')
+  console.error('└──────────────────────────────────────┘')
   console.error(err);
   process.exit(1); // mandatory (as per the Node.js docs)
 });
