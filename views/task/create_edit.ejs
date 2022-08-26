@@ -7,7 +7,7 @@
 <form action="/task/<% if (locals.id) { %>update<% } else { %>new<% } %>" method="post">
     <input type="hidden" name="id" value="<%= locals.id %>">
     <input type="hidden" name="taname" value="<%= locals.taname %>">
-    <table>
+    <table class="table table-borderless table-sm">
         <tr>
             <td><label for="tatype">工作類型</label></td>
             <td><%- include('options.ejs'); %></td>
