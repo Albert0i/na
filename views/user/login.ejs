@@ -15,12 +15,12 @@
         <form action="/user/login" method="post">
             <table>
                 <tr>
-                    <th><label for="username">用戶名稱: </label></th>
-                    <td><input type="text" name="username" id="username" value="<%= locals.username %>" placeholder="輸入用戶名稱" required></td>
+                    <th><label for="username" class="form-label">用戶名稱: </label></th>
+                    <td><input type="text" class="form-control" name="username" id="username" value="<%= locals.username %>" placeholder="輸入用戶名稱" required></td>
                 </tr>
                 <tr>
-                    <th><label for="password">用戶密碼: </label></th>
-                    <td><input type="password" name="password" value="<%= locals.password %>" placeholder="輸入用戶密碼" required></td>
+                    <th><label for="password"  class="form-label">用戶密碼: </label></th>
+                    <td><input type="password"  class="form-control" name="password" value="<%= locals.password %>" placeholder="輸入用戶密碼" required></td>
                 </tr>
                 <tr>
                     <td colspan="2">
