@@ -81,8 +81,20 @@ app.get('/', (req, res) => {
   let msg = `Your pid is ${process.pid}.`
   let msg2 = `, cluster instance is ${process.env.NODE_APP_INSTANCE}`  
   msg += (process.env.NODE_APP_INSTANCE? msg2 : '.')
-  console.log(msg)
-  res.status(200).send(msg)
+
+  const cowsay = require("cowsay");
+  // console.log(msg)
+  console.log(cowsay.say({
+      text : msg,
+      e : "oO",
+      T : "U "
+  }));
+  // res.status(200).end(msg)
+  res.status(200).end(cowsay.say({
+    text : msg,
+    e : "oO",
+    T : "U "
+}))
 })  
 
 app.use('/task', taskRoute)
