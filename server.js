@@ -78,8 +78,8 @@ mongoose.connection.on("reconnected", () => console.log('Re-connected to MongoDB
 
 // home page
 app.get('/', (req, res) => {
-  let msg = `Your pid is ${process.pid}.`
-  let msg2 = `, cluster instance is ${process.env.NODE_APP_INSTANCE}`  
+  let msg = `Your pid is ${process.pid}`
+  let msg2 = `, cluster instance is ${process.env.NODE_APP_INSTANCE}.`  
   msg += (process.env.NODE_APP_INSTANCE? msg2 : '.')
 
   const cowsay = require("cowsay");
