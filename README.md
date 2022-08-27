@@ -368,7 +368,7 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 # Server port 
 PORT = 3000
 
-# Server port ((optional https))
+# Server port (optional https)
 PORT_HTTPS = 3443
 
 # Server limit
