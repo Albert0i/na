@@ -368,8 +368,8 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 # Server port 
 PORT = 3000
 
-# Server port (https)
-PORT_HTTPS = 443
+# Server port ((optional https))
+PORT_HTTPS = 3443
 
 # Server limit
 MAX_REQUEST_PER_MINUTE = 100
@@ -383,6 +383,8 @@ REDIS_URI = "redis://your_redis_server_url"
 
 source tree:
 ```
+tree -L 3 -I node_modules
+
 .
 ├── README.md
 ├── controller
@@ -409,17 +411,22 @@ source tree:
 ├── package.json
 ├── public
 │   ├── 404.png
-│   └── favicon.ico
+│   ├── favicon.ico
+│   └── styles.css
 ├── routes
 │   ├── taskRoute.js
 │   └── userRoute.js
 ├── server.js
+├── ssl
+│   ├── cert.pem
+│   └── key.pem
 └── views
     ├── 404.ejs
+    ├── partials
+    │   ├── footer.ejs
+    │   └── header.ejs
     ├── task
     │   ├── create_edit.ejs
-    │   ├── footer.ejs
-    │   ├── header.ejs
     │   ├── index.ejs
     │   └── options.ejs
     └── user
@@ -427,4 +434,4 @@ source tree:
         └── signup.ejs
 ```
 
-## EOF (2022/08/26)
+## EOF (2022/08/28)
