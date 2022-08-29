@@ -377,7 +377,7 @@ MAX_REQUEST_PER_MINUTE = 100
 # MongoDB 
 MONGODB_URI = "mongodb+srv://your_mongodb_server_url"
 
-# Redis
+# Redis (optional)
 REDIS_URI = "redis://your_redis_server_url"
 ```
 
@@ -434,4 +434,4 @@ tree -L 3 -I node_modules
         └── signup.ejs
 ```
 
-## EOF (2022/08/28)
+## EOF (2022/08/29)
