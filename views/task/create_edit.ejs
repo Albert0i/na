@@ -1,42 +1,44 @@
-<% if (locals.id) { %>
-    <h3>編輯工作</h3>
-<% } else { %>
-    <h3>建立新工作</h3>
-<% } %>
-
-<form action="/task/<% if (locals.id) { %>update<% } else { %>new<% } %>" method="post">
-    <input type="hidden" name="id" value="<%= locals.id %>">
-    <input type="hidden" name="taname" value="<%= locals.taname %>">
-    <table class="table table-borderless table-sm">
-        <tr>
-            <td><label for="tatype">工作類型</label></td>
-            <td><%- include('options.ejs'); %></td>
-        </tr>
-        <tr>
-            <td><label for="tadate">工作日期</label></td>
-            <td><input type="text" name="tadate" placeholder="input date" 
-                value="<%= locals.tadate %>" maxlength="8" required></td>
-        </tr>
-        <tr>
-            <td><label for="taappnum">申請表編號</label></td>
-            <td><input type="text" name="taappnum" placeholder="input appnum" 
-                value="<%= locals.taappnum %>"></td>
-        </tr>
-        <tr>
-            <td><label for="tafamrep">家團代表</label></td>
-            <td><input type="text" name="tafamrep" placeholder="input famrep" 
-                value="<%= locals.tafamrep %>"></td>
-        </tr>
-        <tr>
-            <td><label for="taremark">工作備註</label></td>
-            <td><input type="text" name="taremark" placeholder="input remark" 
-                value="<%= locals.taremark %>"></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <button class="btn btn-primary"><% if (locals.id) { %>更新<% } else { %>建立<% } %></button>
-                <input type="reset" value="重設" class="btn btn-secondary">
-            </td>
-        </tr>
-    </table>        
-</form>
+<div class="container">
+    <% if (locals.id) { %>
+        <h3>編輯工作</h3>
+    <% } else { %>
+        <h3>建立新工作</h3>
+    <% } %>
+    
+    <form action="/task/<% if (locals.id) { %>update<% } else { %>new<% } %>" method="post">
+        <input type="hidden" name="id" value="<%= locals.id %>">
+        <input type="hidden" name="taname" value="<%= locals.taname %>">
+        <table class="table table-borderless table-sm">
+            <tr>
+                <th><label for="tatype" class="form-label">工作類型</label></th>
+                <td><%- include('options.ejs'); %></td>
+            </tr>
+            <tr>
+                <th><label for="tadate" class="form-label">工作日期</label></th>
+                <td><input type="text" class="form-control form-control-sm" name="tadate" placeholder="input date" 
+                    value="<%= locals.tadate %>" maxlength="8" required></td>
+            </tr>
+            <tr>
+                <th><label for="taappnum" class="form-label">申請表編號</label></th>
+                <td><input type="text" class="form-control form-control-sm" name="taappnum" placeholder="input appnum" 
+                    value="<%= locals.taappnum %>"></td>
+            </tr>
+            <tr>
+                <th><label for="tafamrep" class="form-label">家團代表</label></th>
+                <td><input type="text" class="form-control form-control-sm" name="tafamrep" placeholder="input famrep" 
+                    value="<%= locals.tafamrep %>"></td>
+            </tr>
+            <tr>
+                <th><label for="taremark" class="form-label">工作備註</label></th>
+                <td><input type="text" class="form-control form-control-sm" name="taremark" placeholder="input remark" 
+                    value="<%= locals.taremark %>"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-primary"><% if (locals.id) { %>更新<% } else { %>建立<% } %></button>
+                    <input type="reset" value="重設" class="btn btn-secondary">
+                </td>
+            </tr>
+        </table>        
+    </form>
+</div>

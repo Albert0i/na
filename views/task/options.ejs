@@ -2,7 +2,7 @@
     HTML <select> Tag
     https://www.w3schools.com/tags/tag_select.asp
 -->
-<select name="tatype" class="form-select-sm">
+<select name="tatype" class="form-select form-select-sm">
     <% locals.options.forEach (e => { %>
         <option value="<%= e.totype %>" <% if (e.totype == locals.tatype ) { %>selected<% }%>><%= e.totype %></option>    
     <% }) %>
