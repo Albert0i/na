@@ -156,3 +156,36 @@ process.on('uncaughtException', err => {
 
   pm2 start ecosystem.config.js
 */
+/*
+db.tasks.insertMany([{  taname: 'alberto', 
+                        tatype: '工作一', 
+                        tadate: 20220821, 
+                        taappnum: 'R123456',
+                        tafamrep: '陳大文',
+                        taremark: 'Chan Tai Man'},
+                      { taname: 'alberto', 
+                        tatype: '工作二', 
+                        tadate: 20220821, 
+                        taappnum: 'R543210',
+                        tafamrep: '陳仲文',
+                        taremark: 'Chan Chon Man'},
+                      { taname: 'alberto', 
+                        tatype: '工作三', 
+                        tadate: 20220823, 
+                        taappnum: '61210000003',
+                        tafamrep: '陳小雯',
+                        taremark: 'Chan Sio Man'},
+                      { taname: 'alberto', 
+                        tatype: '工作四', 
+                        tadate: 20220824, 
+                        taappnum: '61210000004',
+                        tafamrep: '陳四文',
+                        taremark: 'Chan Four Man'},
+                      { taname: 'alberto', 
+                        tatype: '工作五', 
+                        tadate: 20220825, 
+                        taappnum: '61210000004',
+                        tafamrep: '陳五文',
+                        taremark: 'Chan Five Man'}
+                      ])
+*/
