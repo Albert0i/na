@@ -30,13 +30,15 @@
                 <span>沒有戶口? 請先 <a href="/user/signup">登記</a></span>
             </div>
 
-            <div class="card">
+            <div class="card mb-1">
                 <button type="submit" class="btn btn-primary">Go</button>
             </div>
 
             <% if (locals.message) { %>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger alert-dismissible" role="alert">
                     <%= locals.message %>
+                    <button class="btn-close" aria-label="close" data-bs-dismiss="alert">                        
+                    </button>
                 </div>            
             <% } %>
         </form>
