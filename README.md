@@ -381,7 +381,7 @@ MONGODB_URI = "mongodb+srv://your_mongodb_server_url"
 REDIS_URI = "redis://your_redis_server_url"
 ```
 
-source tree:
+source tree
 ```
 tree -L 3 -I node_modules
 
@@ -434,4 +434,30 @@ tree -L 3 -I node_modules
         └── signup.ejs
 ```
 
-## EOF (2022/08/29)
+promise.js 
+```javascript
+const myFunc = (param) => {
+  return new Promise((resolve, reject) => {
+      if (param)
+        resolve('success'); 
+      else
+        reject('fail');
+    });
+}
+
+myFunc(true)
+.then(data => {console.log(data)})
+.catch(err => {console.log(err)})
+
+const myFuncSync = async (param) => {
+  try { return await myFunc(param) }
+  catch (err) { console.error(err); }
+  }
+myFuncSync(false)
+```
+output
+```
+success
+fail
+```
+## EOF (2022/09/04)
