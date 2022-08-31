@@ -1,8 +1,8 @@
 <div class="container">
     <% if (locals.id) { %>
-        <h3>編輯工作</h3>
+        <h3 style="text-align: center;">編輯工作</h3>
     <% } else { %>
-        <h3>建立新工作</h3>
+        <h3 style="text-align: center;">建立新工作</h3>
     <% } %>
     
     <form action="/task/<% if (locals.id) { %>update<% } else { %>new<% } %>" method="post">
@@ -35,8 +35,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button class="btn btn-primary btn-sm"><% if (locals.id) { %>更新<% } else { %>建立<% } %></button>
-                    <input type="reset" value="重設" class="btn btn-secondary btn-sm">
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary btn-sm me-2"><% if (locals.id) { %>更新<% } else { %>建立<% } %></button>
+                        <input type="reset" value="重設" class="btn btn-secondary btn-sm">
+                    </div>
                 </td>
             </tr>
         </table>        
