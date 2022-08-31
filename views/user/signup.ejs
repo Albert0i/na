@@ -11,43 +11,50 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h3>登記</h3>
-        <form action="/user/signup" method="post">
-            <table class="table table-borderless table-sm">
-                <tr>
-                    <th><label for="username"  class="form-label">用戶名稱</label></th>
-                    <td><input type="text" class="form-control form-control-sm" name="username" id="username" value="<%= locals.username %>" placeholder="輸入用戶名稱" required></td>
-                </tr>
-                <tr>
-                    <th><label for="password" class="form-label">用戶密碼</label></th>
-                    <td><input type="password" class="form-control form-control-sm" name="password" value="<%= locals.password %>" placeholder="輸入用戶密碼" required></td>
-                </tr>
-                <tr>
-                    <th><label for="password2" class="form-label">確認密碼</label></th>
-                    <td><input type="password" class="form-control form-control-sm" name="password2" value="<%= locals.password2 %>" placeholder="輸入確認密碼" required></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="tunamec" class="form-label">中文姓名</label></th>
-                    <td><input type="text" class="form-control form-control-sm" name="tunamec" value="<%= locals.tunamec %>" placeholder="輸入中文名稱"></td>
-                </tr>
-                <tr>
-                    <th><label for="tunamep" class="form-label">葡文姓名</label></th>
-                    <td><input type="text" class="form-control form-control-sm" name="tunamep" value="<%= locals.tunamep %>" placeholder="輸入葡文名稱"></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button type="submit" class="btn btn-primary btn-sm">Go</button>
-                        <button onclick="history.back()"  class="btn btn-secondary btn-sm">Back</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <%= locals.message %>
-                    </td>
-                </tr>
-            </table>
+    <div class="mx-auto" style="width: 320px;">
+        <h3 style="text-align: center;">登記</h3>
+
+        <form action="/user/signup" method="post" novalidate>
+            <div class="input-group input-group-sm mt-4 mb-2">
+                <label for="username" class="form-label me-2"">用戶名稱</label>
+                <input type="text" class="form-control" name="username" id="username" value="<%= locals.username %>" placeholder="輸入用戶名稱" required>
+                <div class="invalid-feedback">Username is missing.</div>
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+                <label for="password" class="form-label me-2"">用戶密碼</label>
+                <input type="password" class="form-control" name="password" value="<%= locals.password %>" placeholder="輸入用戶密碼" required>
+                <div class="invalid-feedback">Password is missing.</div>
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+                <label for="password2" class="form-label me-2">確認密碼</label>
+                <input type="password" class="form-control" name="password2" value="<%= locals.password2 %>" placeholder="輸入確認密碼" required>
+                <div class="invalid-feedback">Confirmed password is missing.</div>
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+                <label for="tunamec" class="form-label me-2">中文姓名</label>
+                <input type="text" class="form-control" name="tunamec" value="<%= locals.tunamec %>" placeholder="輸入中文名稱">
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+                <label for="tunamep" class="form-label me-2">葡文姓名</label>
+                <input type="text" class="form-control" name="tunamep" value="<%= locals.tunamep %>" placeholder="輸入葡文名稱">
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-sm me-2">Go</button>                
+                <button onclick="history.back()"  class="btn btn-secondary btn-sm">Back</button>
+            </div>
+
+            <% if (locals.message) { %>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <%= locals.message %>
+                    <button class="btn-close" aria-label="close" data-bs-dismiss="alert">                        
+                    </button>
+                </div>            
+            <% } %>
         </form>
 
         <%- include('../partials/footer.ejs'); %>
@@ -55,6 +62,14 @@
 
     <script>
         document.getElementById("username").focus();
+
+        const form = document.querySelector("form")
+        form.addEventListener("submit", e => {
+            if (!form.checkValidity()) {
+                e.preventDefault()
+            }
+            form.classList.add('was-validated')
+        })
     </script>
 </body>
 </html>
