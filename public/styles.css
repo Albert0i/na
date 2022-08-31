@@ -50,6 +50,10 @@ body::before {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 /*
    Change header background color of modal of twitter bootstrap
    https://stackoverflow.com/questions/19262113/change-header-background-color-of-modal-of-twitter-bootstrap
