@@ -1,8 +1,8 @@
 <div class="container">
     <% if (locals.id) { %>
-        <h3 style="text-align: center;">編輯工作</h3>
+        <h3>編輯工作</h3>
     <% } else { %>
-        <h3 style="text-align: center;">建立新工作</h3>
+        <h3>建立新工作</h3>
     <% } %>
     
     <form action="/task/<% if (locals.id) { %>update<% } else { %>new<% } %>" method="post">

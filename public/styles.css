@@ -54,6 +54,10 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  text-align: center;
+}
+
 /*
    Change header background color of modal of twitter bootstrap
    https://stackoverflow.com/questions/19262113/change-header-background-color-of-modal-of-twitter-bootstrap
