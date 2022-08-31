@@ -358,7 +358,8 @@ Previously, we've talked about how to setup [Docker swarm on Oracle Cloud (Free 
 10. [Limiting Node.js API calls with express-rate-limit](https://dev.to/brunohgv/limiting-node-js-api-calls-with-express-rate-limit-11kl)
 11. [Node.js vs .NET Core: What to Choose in 2022](https://intelvision.pro/blog/node-js-vs-net-core-what-to-choose-in-2022/)
 12. [Web server implementations in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-6.0&tabs=windows)
-13. [Markdown Guide | Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+13. [Internet Explorer 11 compatibility solution for Bootstrap 5](https://github.com/coliff/bootstrap-ie11)
+14. [Markdown Guide | Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 
 
 ## VIII. Appendix
