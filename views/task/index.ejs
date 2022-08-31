@@ -46,8 +46,9 @@
                             </td>
                             <td>
                                 <form action="/task/delete/<%= t._id %>?_method=DELETE" method="POST">
-                                    <button type="submit" onclick="return confirm('Are you sure?')"  class="btn btn-danger btn-sm">刪除
-                                    </button>
+                                    <!-- <button type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">刪除
+                                    </button> -->
+                                    <button type="button" onclick="answerIt(this.form)" class="btn btn-danger btn-sm">刪除</button>
                                 </form>
                             </td>
                         </tr>
@@ -60,5 +61,42 @@
 
         <%- include('../partials/footer.ejs'); %>
     </div>
+        
+        <!-- Modal -->
+        <div class="modal fade modal-sm" id="staticBackdropDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirm</h5>
+                </div>
+                <div class="modal-body">
+                    確定刪除?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-yes" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Yes</button>
+                    <button type="button" id="btn-no" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script>
+            var thisForm = undefined
+    
+            function answerIt(form)
+            {
+                // Save the form
+                thisForm = form
+                var myModal = new bootstrap.Modal(document.getElementById("staticBackdropDelete"), {});
+                myModal.show()
+            }
+    
+            const btnYes = document.getElementById('btn-yes')
+            
+            btnYes.addEventListener('click', event => {
+                if (thisForm)
+                    thisForm.submit()
+            })
+        </script>        
 </body>
 </html>
