@@ -462,4 +462,4 @@ output
 success
 fail
 ```
-## EOF (2022/<a title = "Revolution of Our Times" href="https://www.imdb.com/title/tt15049118/">08/31</a>)
+## EOF (2022/<a href="https://www.imdb.com/title/tt15049118/" style="text-decoration: none; color: black; cursor: none;">08/31</a>)
